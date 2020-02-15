@@ -1,0 +1,64 @@
+name: 'site'
+
+on:
+  push:
+  pull_request:
+
+env:
+  CI: true
+  DOCKER_BUILDKIT: 1
+
+jobs:
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Build
+      run: |
+        cd site
+        yarn
+        yarn build
+    - uses: actions/upload-artifact@master
+      with:
+        name: DBHI-site
+        path: site/dist
+    - name: Build for GHP
+      run: |
+        cd site
+        rm -rf dist
+        yarn build
+      env:
+        BASE_URL: ''
+    - name: 'publish site to gh-pages'
+      if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi'
+      env:
+        GH_DEPKEY: ${{ secrets.GHA_DEPLOY_KEY }}
+      run: |
+        cd site/dist/
+        touch .nojekyll
+        git init
+        git add .
+        git config --local user.email "push@gha"
+        git config --local user.name "GHA"
+        git commit -a -m "update ${{ github.sha }}"
+        git remote add origin git@github.com:dbhi/dbhi.github.io
+        eval `ssh-agent -t 60 -s`
+        echo "$GH_DEPKEY" | ssh-add -
+        mkdir -p ~/.ssh/
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        git push -u origin +master
+        ssh-agent -k
+        cd ..
+        rm -rf dist
+    - name: Build with Electron
+      run: |
+        cd site
+        yarn electron:build --publish never
+    - uses: actions/upload-artifact@master
+      with:
+        name: DBHI-desktop
+        path: site/dist_electron

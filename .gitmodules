@@ -1,0 +1,12 @@
+[submodule "mambo"]
+	path = mambo
+	url = https://github.com/dbhi/mambo
+[submodule "gRPC"]
+	path = gRPC
+	url = https://github.com/dbhi/gRPC
+[submodule "VUnit/vunit"]
+	path = VUnit/vunit
+	url = https://github.com/VUnit/vunit
+[submodule "VUnit/cosim"]
+	path = VUnit/cosim
+	url = https://github.com/VUnit/cosim
