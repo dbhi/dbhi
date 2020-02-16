@@ -56,11 +56,3 @@ jobs:
         ssh-agent -k
         cd ..
         rm -rf dist
-    - name: Build with Electron
-      run: |
-        cd site
-        yarn electron:build --publish never
-    - uses: actions/upload-artifact@v2
-      with:
-        name: DBHI-desktop
-        path: site/dist_electron
