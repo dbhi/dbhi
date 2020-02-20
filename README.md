@@ -9,6 +9,7 @@ Resources, tools and examples are organized in multiple repositories:
 - `dbhi/dbhi`: main repository, contains the documentation and publications, includes suggested repos as submodules.
 - Required:
   - `dbhi/VUnit`: fork of [VUnit/vunit](https://github.com/VUnit/vunit), a unit testing framework for VHDL/SystemVerilog.
+  - `dbhi/cosim`: fork of [VUnit/cosim](https://github.com/VUnit/cosim), which extends VUnit with co-simulation features.
   - `dbhi/mambo`: fork of [beehive-lab/mambo](https://github.com/beehive-lab/mambo), a low-overhead dynamic binary instrumentation and modification tool for ARM.
   - `dbhi/gRPC`: go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
 - Other:
