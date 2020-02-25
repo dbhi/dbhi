@@ -16,9 +16,19 @@
 
   <v-tooltip bottom>
     <template v-slot:activator="{ on }">
-      <v-btn tile text v-on="on" to="/">
+      <v-btn class="mr-1" tile text v-on="on" to="/" :block="false">
         <v-icon left>mdi-home</v-icon>
         DBHI
+      </v-btn>
+    </template>
+    <span>Home</span>
+  </v-tooltip>
+
+  <v-tooltip bottom>
+    <template v-slot:activator="{ on }">
+      <v-btn class="ml-1" tile text v-on="on" href="pdf/FPGA2020_poster.pdf">
+        <v-icon left>mdi-school</v-icon>
+        FPGA 2020
       </v-btn>
     </template>
     <span>Home</span>
