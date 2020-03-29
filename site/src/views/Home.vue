@@ -36,7 +36,7 @@
             tile
             color="primary"
           >
-            <v-icon left>mdi-github-box</v-icon>
+            <v-icon left>mdi-github</v-icon>
             dbhi/dbhi
           </v-btn>
         </template>
@@ -55,7 +55,7 @@
             text
             outlined
           >
-            <v-icon left>mdi-github-circle</v-icon>
+            <v-icon left>mdi-github</v-icon>
             {{ item.name }}
           </v-btn>
         </template>
