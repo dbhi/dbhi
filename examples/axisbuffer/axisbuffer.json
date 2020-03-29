@@ -1,0 +1,23 @@
+{
+    "DBHI": "v0",
+    "case": "buffer",
+    "func": "dbhi_cp",
+    "orig": "cp",
+    "argd": "int32_t *I, int32_t *O, uint32_t l",
+    "drargs": "I, O, l",
+    "hand": "buffer_pre_handler",
+    "files": {
+      "srcs": ["fifo", "axis_buffer"],
+      "test": ["tb_vc_axisbuffer"],
+      "c": ["pkg_c", "tb_c_axisbuffer"]
+    },
+    "uut": "test_axisbuffer",
+    "args": "../../vhdl/test/data/in.csv",
+    "vunit": "sim.py -v",
+    "synth": {
+      "freq": "50",
+      "platform": "pynq",
+      "entity": "axis_buffer",
+      "arch": "arch"
+    }
+}
