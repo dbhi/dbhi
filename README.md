@@ -6,13 +6,12 @@ This is the main repository of project Dynamic Binary Hardware Injection (DBHI),
 
 Resources, tools and examples are organized in multiple repositories:
 
-- `dbhi/dbhi`: main repository, contains the documentation and publications, includes suggested repos as submodules.
-- Required:
+- `dbhi/dbhi`: main repository, contains the documentation and publications and includes dependencies as submodules.
   - `dbhi/VUnit`: fork of [VUnit/vunit](https://github.com/VUnit/vunit), a unit testing framework for VHDL/SystemVerilog.
   - `dbhi/cosim`: fork of [VUnit/cosim](https://github.com/VUnit/cosim), which extends VUnit with co-simulation features.
-  - `dbhi/mambo`: fork of [beehive-lab/mambo](https://github.com/beehive-lab/mambo), a low-overhead dynamic binary instrumentation and modification tool for ARM.
+  - [beehive-lab/mambo](https://github.com/beehive-lab/mambo): a low-overhead dynamic binary instrumentation and modification tool for ARM.
   - `dbhi/gRPC`: go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
-- Other:
+- Other helper repositories:
   - `dbhi/docker`: sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
   - `dbhi/qus`: qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/docker`.
 
