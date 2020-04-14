@@ -81,7 +81,7 @@ export default {
       },
       {
         name: "MAMBO",
-        ref: "dbhi/mambo"
+        ref: "beehive-lab/mambo"
       },
       {
         name: "DynamoRIO",
