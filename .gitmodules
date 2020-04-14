@@ -1,6 +1,6 @@
 [submodule "mambo"]
 	path = mambo
-	url = https://github.com/dbhi/mambo
+	url = https://github.com/beehive-lab/mambo
 [submodule "gRPC"]
 	path = gRPC
 	url = https://github.com/dbhi/gRPC
