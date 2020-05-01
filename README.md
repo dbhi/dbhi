@@ -1,19 +1,27 @@
-# Dynamic Binary Hardware Injection (DBHI)
+<p align="center">
+  <a title="Site" href="https://dbhi.github.io"><img src="https://img.shields.io/website.svg?label=dbhi.github.io&longCache=true&style=flat-square&url=http%3A%2F%2Fdbhi.github.io%2Findex.html"></a><!--
+  -->
+  <a title="DevDependency Status" href="https://david-dm.org/dbhi/dbhi?type=dev"><img src="https://img.shields.io/david/dev/dbhi/dbhi.svg?path=site&longCache=true&style=flat-square&label=devdeps&logo=npm"></a><!--
+  -->
+  <a title="Dependency Status" href="https://david-dm.org/dbhi/dbhi"><img src="https://img.shields.io/david/dbhi/dbhi.svg?path=site&longCache=true&style=flat-square&label=deps&logo=npm"></a><!--
+  -->
+  <a title="'site' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Asite"><img alt="'site' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/site?longCache=true&style=flat-square&label=site&logo=github"></a>
+</p>
 
-This is the main repository of project Dynamic Binary Hardware Injection (DBHI), a work flow towards decoupled functional hardware-software co-design on SoCs with FPGA, through injection of compiled HDL designs using binary modification. The design flow is constructed from existing off-the-shelf tools, and it is tested on multiple architectures (ARMv7, ARMv8 and x86-64).
+Dynamic Binary Hardware Injection (DBHI) is a work flow towards decoupled functional hardware-software co-design on SoCs with FPGA, through injection of compiled HDL designs. The design flow is constructed from existing off-the-shelf tools, and it is tested on multiple architectures (ARMv7, ARMv8 and x86-64).
 
 ## Project structure
 
 Resources, tools and examples are organized in multiple repositories:
 
-- `dbhi/dbhi`: main repository, contains the documentation and publications and includes dependencies as submodules.
-  - `dbhi/VUnit`: fork of [VUnit/vunit](https://github.com/VUnit/vunit), a unit testing framework for VHDL/SystemVerilog.
-  - `dbhi/cosim`: fork of [VUnit/cosim](https://github.com/VUnit/cosim), which extends VUnit with co-simulation features.
+- `dbhi/dbhi`: main repository, contains the documentation, publications and examples. Dependencies are included as submodules:
+  - [VUnit/vunit](https://github.com/VUnit/vunit): a unit testing framework for VHDL/SystemVerilog.
+  - [VUnit/cosim](https://github.com/VUnit/cosim): extends VUnit with co-simulation features.
   - [beehive-lab/mambo](https://github.com/beehive-lab/mambo): a low-overhead dynamic binary instrumentation and modification tool for ARM.
-  - `dbhi/gRPC`: go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
+  - [dbhi/gRPC](https://github.com/dbhi/gRPC): go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
 - Other helper repositories:
-  - `dbhi/docker`: sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
-  - `dbhi/qus`: qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/docker`.
+  - [dbhi/docker](https://github.com/dbhi/docker): sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
+  - [dbhi/qus](https://github.com/dbhi/qus): qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/docker`.
 
 ## Environment setup
 
@@ -29,7 +37,7 @@ The list of required tools to run the examples is the following:
 
 ---
 
-Ready-to-use [docker](https://www.docker.com/) images are available at [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools.
+Ready-to-use container images (for [docker](https://www.docker.com/)/[podman](https://podman.io/)) are available at [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools.
 
 Images provided by [docker-library/official-images](https://github.com/docker-library/official-images#architectures-other-than-amd64) are used to build manifests for `amd64`, `arm64v8` and `arm32v7` platforms. Currently, all the images are based on `Ubuntu 18.04 (bionic)`. See [github.com/dbhi/docker](https://github.com/dbhi/docker) for further details.
 
@@ -50,6 +58,6 @@ Should you want to install the tools natively on your host, the dockerfiles at [
 - MAMBO must be recursively cloned.
 - To get DynamoRIO, a release tarball can be downloaded or it can be built from sources.
 
-> NOTE: If GHDL, VUnit and/or DynamoRIO installed in custom locations, these can be provided through `PATH`, `PYTHONPATH` and/or `DYNAMORIO_HOME`, respectively.
+> NOTE: If GHDL, VUnit and/or DynamoRIO are installed in custom locations, these can be defined through `PATH`, `PYTHONPATH` and/or `DYNAMORIO_HOME`, respectively.
 
 > NOTE: Building DynamoRIO with `g++-8` fails on `amd64`. Using `g++-6` or `g++-7` is suggested.
