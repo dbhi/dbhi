@@ -4,8 +4,7 @@
 package pkg_c is
 
   function get_p(f: integer) return integer;
-    attribute foreign of get_p :
-      function is "VHPIDIRECT get_p";
+  attribute foreign of get_p : function is "VHPIDIRECT get_p";
 
   constant stream_length : integer := get_p(0);
 
@@ -13,8 +12,7 @@ package pkg_c is
   type buffer_p is access buffer_t;
 
   impure function get_b(f: integer) return buffer_p;
-    attribute foreign of get_b :
-      function is "VHPIDIRECT get_b";
+  attribute foreign of get_b : function is "VHPIDIRECT get_b";
 
   type buffet_t_prot is protected
     procedure init ( i: integer );
@@ -29,11 +27,11 @@ end pkg_c;
 
 package body pkg_c is
   function get_p(f: integer) return integer is begin
-    assert false report "VHPI" severity failure;
+    report "VHPI" severity failure;
   end get_p;
 
   impure function get_b(f: integer) return buffer_p is begin
-    assert false report "VHPI" severity failure;
+    report "VHPI" severity failure;
   end get_b;
 
   type buffet_t_prot is protected body

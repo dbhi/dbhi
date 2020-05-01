@@ -33,7 +33,7 @@ check_call([PY, 'sim.py', '-v'], cwd=PY_DIR)
 
 C_DIR = ROOT / 'test' / 'c'
 
-check_call(['gcc', '-fPIC', '-c', C_DIR / 'wrapper.c', '-o', BUILD_DIR / 'obj', 'wrapper.o'])
+check_call(['gcc', '-fPIC', '-c', C_DIR / 'wrapper.c', '-o', BUILD_DIR / 'obj' / 'wrapper.o'])
 
 # Analyse VHDL sources
 
@@ -45,4 +45,4 @@ GHDL_ARGS = [
     '-P../../test/py/vunit_out/ghdl/libraries/osvvm'
 ]
 
-#check_call(['ghdl', '-a'] + GHDL_ARGS + [C_DIR / 'pkg_c.vhd'])
+check_call(['ghdl', '-a'] + GHDL_ARGS + [C_DIR / 'pkg_c.vhd'])
