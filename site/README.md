@@ -7,6 +7,8 @@
   -->
   <a title="'site' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Asite"><img alt="'site' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/site?longCache=true&style=flat-square&label=site&logo=github"></a><!--
   -->
+  <a title="'pynq' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Apynq"><img alt="'pynq' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/pynq?longCache=true&style=flat-square&label=pynq&logo=github"></a><!--
+  -->
 </p>
 
 Use `yarn` (or `npm`) to install dependencies to subdir `node_modules`.
