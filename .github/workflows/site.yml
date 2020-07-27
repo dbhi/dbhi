@@ -24,7 +24,7 @@ jobs:
         cd site
         yarn
         yarn build
-    - uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@v2
       with:
         name: DBHI-site
         path: site/dist
@@ -60,7 +60,7 @@ jobs:
       run: |
         cd site
         yarn electron:build --publish never
-    - uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@v2
       with:
         name: DBHI-desktop
         path: site/dist_electron
