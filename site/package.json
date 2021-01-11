@@ -32,7 +32,7 @@
     "electron-devtools-installer": "^3.1.1",
     "eslint": "^7.17.0",
     "eslint-plugin-vue": "^7.4.0",
-    "sass": "^1.32.0",
+    "sass": "^1.32.2",
     "sass-loader": "^10.0.4",
     "vue-cli-plugin-electron-builder": "^2.0.0-rc.5",
     "vue-cli-plugin-vuetify": "^2.0.9",
