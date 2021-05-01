@@ -36,7 +36,7 @@ jobs:
       env:
         BASE_URL: ''
     - name: 'publish site to gh-pages'
-      if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi'
+      if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi' && endsWith(github.ref, '/main')
       env:
         GH_DEPKEY: ${{ secrets.GHA_DEPLOY_KEY }}
       run: |
