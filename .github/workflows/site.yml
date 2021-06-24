@@ -15,19 +15,24 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@v2
+
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
+
     - name: Build
       run: |
         cd site
         yarn
         yarn build
+
     - uses: actions/upload-artifact@v2
       with:
         name: DBHI-site
         path: site/dist
+
     - name: Build for GHP
       run: |
         cd site
@@ -35,11 +40,21 @@ jobs:
         yarn build
       env:
         BASE_URL: ''
+
+    - name: Build concept for GHP
+      run: |
+        cd site/concept
+        yarn
+        yarn build
+      env:
+        BASE_URL: '/concept'
+
     - name: 'publish site to gh-pages'
       if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi' && endsWith(github.ref, '/main')
       env:
         GH_DEPKEY: ${{ secrets.GHA_DEPLOY_KEY }}
       run: |
+        cp -vr site/concept/dist site/dist/concept
         cd site/dist/
         touch .nojekyll
         git init
