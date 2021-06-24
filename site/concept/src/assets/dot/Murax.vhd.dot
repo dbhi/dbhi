@@ -1,0 +1,29 @@
+strict digraph {
+// Node definitions.
+VexRiscvSocSoftware [
+shape=plaintext
+fontcolor=orange
+];
+"riscv64-gcc" [
+shape=box
+color=orange
+];
+sbt [
+shape=box
+color=red
+];
+"Murax.vhd" [
+shape=plaintext
+fontcolor=violet
+];
+VexRiscv [
+shape=plaintext
+fontcolor=red
+];
+
+// Edge definitions.
+VexRiscvSocSoftware -> "riscv64-gcc";
+"riscv64-gcc" -> sbt;
+sbt -> "Murax.vhd";
+VexRiscv -> sbt;
+}

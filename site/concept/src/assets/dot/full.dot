@@ -1,0 +1,194 @@
+digraph G {
+  splines="line"
+
+  "VexRiscvSocSoftware" -> "riscv64-gcc" -> "sbt" -> "Murax.vhd"
+  "VexRiscv" -> "sbt"
+
+  "UUT" -> "ghdl -a [UUT]" -> "vhdl.o"
+  "gcc [app]" -> "app"
+  "application" -> "gcc [app]"
+  "application" -> "gcc [happ]"
+  "application" -> "gcc [agrpc]"
+  "wrapper" -> "gcc [wrapper]" -> "wrapper.o" -> "gcc [happ]" -> "happ"
+  "wrapper.o" -> "gcc [hdbm]"
+
+  "tb_c" -> "ghdl -a [tb_c]" -> "vhdl.o_c" -> "ghdl --list-link"
+  "vhdl.o" -> "ghdl -a [tb_c]"
+  "ghdl --list-link" -> "gcc [happ]"
+  "ghdl --list-link" -> "gcc [hdbm]"
+
+  "VUnit (libs)" -> "vunit"
+  "srcs.py" -> "vunit"
+  "tb_vunit" -> "vunit"
+  "UUT" -> "vunit"
+  "VUnit (libs)" -> "vunit.compile" -> "vhdl.o_vunit"
+  "vhdl.o_vunit" -> "ghdl --list-link"
+  "vhdl.o_vunit" -> "ghdl --list-link [grpc]"
+
+  "vhdl.o" -> "ghdl --list-link"
+  "vhdl.o" -> "ghdl --list-link [grpc]"
+
+  "gcc [dbm]" -> "dbm"
+
+  "mambo" -> "gcc [dbm]"
+  "mambo" -> "gcc [hdbm]"
+  "mambo" -> "gcc [dgrpc]"
+
+  "plugin" -> "parse.hdbm" -> "plugin.hdbm" -> "gcc [hdbm]" -> "hdbm"
+
+  "srcs.grpc.hgrpc" -> "gcc [hgrpc]"
+  "wrapper.o.grpc" -> "gcc [hgrpc]"
+  "ghdl --list-link [grpc]" -> "gcc [hgrpc]"
+  "gcc [hgrpc]" -> "hgrpc"
+  "tb_grpc" -> "ghdl -a [hgrpc]" -> "vhdl.o_hgrpc" -> "ghdl --list-link [grpc]"
+
+  "grpc wrapper" -> "gcc [grpc wrapper]" -> "wrapper.o.grpc" -> "gcc [agrpc]" -> "agrpc"
+  "go build [so]" -> "libgrpc-go.so"
+  "libgrpc-go.so" -> "gcc [hgrpc]"
+  "libgrpc-go.so" -> "gcc [grpc wrapper]"
+  "libgrpc-go.so" -> "gcc [agrpc]"
+  "libgrpc-go.so" -> "gcc [grpc client]"
+
+  "grpc [client]" -> "go build [so]"
+  "grpc.go" -> "go build [so]"
+
+  "grpc [server]" -> "go build [server]" -> "grpc"
+  "grpc [client]" -> "go build [client]" -> "grpc.client"
+  "lib.proto" -> "protoc" -> "grpc.go" -> "go build [server]"
+  "grpc.go" -> "go build [client]"
+  "grpc.go" -> "go build [gen]"
+  "grpc [gen]" -> "go build [gen]" -> "grpc.gen"
+
+  "grpc client" -> "gcc [grpc client]" -> "cgrpc"
+
+  "plugin" -> "parse.dgrpc" -> "plugin.grpc"
+  "plugin.grpc" -> "gcc [dgrpc]"
+  "libgrpc-go.so" -> "gcc [dgrpc]"
+  "wrapper.o.grpc" -> "gcc [dgrpc]"
+  "gcc [dgrpc]" -> "dgrpc"
+
+  "plugin" -> "parse.mast" -> "plugin.mast"
+  "plugin.mast" -> "gcc [mast]" -> "mast"
+  "mambo" -> "gcc [mast]"
+  "wrap_mast" -> "synth_ip.mast" -> "netlist.mast" -> "ip.mast"
+
+  "UUT" -> "synth_ip.mast"
+  "UUT" -> "synth_ip.bit"
+
+  "vivado_prj.mast" -> "synth_sys.mast" -> "P&R.mast" -> "impl.mast" -> "bit.mast"
+  "vivado_ip.mast" -> "parse_ip.mast" -> "ip.mast" -> "synth_sys.mast"
+
+  "vivado_prj.bit" -> "synth_sys.bit" -> "P&R.bit" -> "impl.bit" -> "bit"
+  "vivado_ip.bit" -> "parse_ip.bit" -> "ip.bit" -> "synth_sys.bit"
+  "wrap_bit" -> "synth_ip.bit" -> "netlist.bit" -> "ip.bit"
+
+  "bare-metal" -> "sdk" -> "eapp"
+
+  "bare-metal" [shape=plaintext, fontcolor=orange];
+  "wrap_bit" [shape=plaintext, fontcolor=violet];
+  "wrap_mast" [shape=plaintext, fontcolor=violet];
+  "vivado_prj.mast" [shape=plaintext, fontcolor=brown];
+  "vivado_prj.bit" [shape=plaintext, fontcolor=brown];
+  "vivado_ip.mast" [shape=plaintext, fontcolor=brown];
+  "vivado_ip.bit" [shape=plaintext, fontcolor=brown];
+  "Murax.vhd" [shape=plaintext, fontcolor=violet];
+  "VexRiscvSocSoftware" [shape=plaintext, fontcolor=orange];
+  "VexRiscv" [shape=plaintext, fontcolor=red];
+  "mambo" [shape=plaintext, fontcolor=orange];
+  "application" [shape=plaintext, fontcolor=orange];
+  "wrapper" [shape=plaintext, fontcolor=orange];
+  "grpc wrapper" [shape=plaintext, fontcolor=orange];
+  "tb_grpc" [shape=plaintext, fontcolor=violet];
+  "UUT" [shape=plaintext, fontcolor=violet];
+  "tb_c" [shape=plaintext, fontcolor=violet];
+  "VUnit (libs)" [shape=plaintext, fontcolor=violet];
+  "srcs.py" [shape=plaintext, fontcolor=green];
+  "tb_vunit" [shape=plaintext, fontcolor=violet];
+  "srcs.grpc.hgrpc"  [shape=plaintext, fontcolor=orange];
+  "grpc [server]" [shape=plaintext, fontcolor=blue];
+  "grpc [client]" [shape=plaintext, fontcolor=blue];
+  "grpc client" [shape=plaintext, fontcolor=orange];
+  "grpc [gen]" [shape=plaintext, fontcolor=blue];
+  "plugin" [shape=plaintext, fontcolor=orange];
+  "lib.proto" [shape=plaintext];
+
+  "plugin.hdbm" [fontcolor=orange];
+  "plugin.grpc" [fontcolor=orange];
+  "plugin.mast" [fontcolor=orange];
+  "grpc.go" [fontcolor=blue];
+
+  { rank=same "bare-metal" "wrap_bit" "VexRiscvSocSoftware" "VexRiscv" "vivado_ip.bit" "vivado_prj.bit" "vivado_ip.mast" "vivado_prj.mast" "wrap_mast" "srcs.grpc.hgrpc" "mambo" "application" "wrapper" "grpc wrapper" "tb_grpc" "UUT" "grpc [client]" "tb_c" "VUnit (libs)" "srcs.py" "tb_vunit" "grpc client" "grpc [client]" "grpc [server]" "grpc [gen]" "plugin" "lib.proto"}
+
+  "synth_ip.mast" [shape=box, color=brown];
+  "synth_ip.bit" [shape=box, color=brown];
+  "synth_sys.mast" [shape=box, color=brown];
+  "synth_sys.bit" [shape=box, color=brown];
+  "P&R.mast" [shape=box, color=brown];
+  "P&R.bit" [shape=box, color=brown];
+  "impl.mast" [shape=box, color=brown];
+  "impl.bit" [shape=box, color=brown];
+
+  "riscv64-gcc" [shape=box, color=orange];
+  "sbt" [shape=box, color=red];
+
+  "sdk" [shape=box, color=brown];
+  "ghdl -a [UUT]" [shape=box, color=violet];
+  "ghdl -a [hgrpc]" [shape=box, color=violet];
+  "vunit.compile" [shape=box, color=green];
+  "ghdl -a [tb_c]" [shape=box, color=violet];
+
+  "ghdl --list-link" [shape=box, color=violet];
+  "ghdl --list-link [grpc]" [shape=box, color=violet];
+
+  "gcc [app]" [shape=box, color=orange];
+  "gcc [happ]" [shape=box, color=orange];
+  "gcc [agrpc]" [shape=box, color=orange];
+  "gcc [hgrpc]" [shape=box, color=orange];
+  "gcc [dgrpc]" [shape=box, color=orange];
+  "gcc [wrapper]" [shape=box, color=orange];
+  "gcc [dbm]" [shape=box, color=orange];
+  "gcc [hdbm]" [shape=box, color=orange];
+  "gcc [grpc wrapper]" [shape=box, color=orange];
+  "gcc [grpc client]" [shape=box, color=orange];
+  "gcc [mast]" [shape=box, color=orange];
+
+  "go build [so]" [shape=box, color=blue];
+  "go build [server]" [shape=box, color=blue];
+  "go build [client]" [shape=box, color=blue];
+  "go build [gen]" [shape=box, color=blue];
+
+  "protoc" [shape=box];
+
+  "eapp" [shape=octagon];
+  "mast" [shape=octagon];
+  "bit" [shape=octagon, color=brown];
+  "bit.mast" [shape=octagon, color=brown];
+  "app" [shape=octagon];
+  "happ" [shape=octagon, color=violet];
+  "hdbm" [shape=octagon, color=violet];
+  "dbm" [shape=octagon];
+  "dgrpc" [shape=octagon];
+  "hgrpc" [shape=octagon, color=violet];
+  "agrpc" [shape=octagon];
+  "cgrpc" [shape=octagon];
+  "grpc.client" [shape=octagon];
+  "grpc" [shape=octagon];
+  "grpc.gen" [shape=octagon];
+  "vunit" [shape=octagon, color=green];
+  "libgrpc-go.so" [shape=octagon];
+
+  "parse.hdbm" [shape=box];
+  "parse.dgrpc" [shape=box];
+  "parse.mast" [shape=box];
+  "parse_ip.mast" [shape=box];
+  "parse_ip.bit" [shape=box];
+
+  { rank=same "impl.mast" "impl.bit" "gcc [mast]" "gcc [dbm]" "gcc [app]" "gcc [happ]" "gcc [agrpc]" "gcc [hgrpc]" "gcc [dgrpc]" "gcc [hdbm]" "gcc [grpc client]" }
+  { rank=same "eapp" "bit" "bit.mast" "app" "happ" "dbm" "hdbm" "agrpc" "hgrpc" "dgrpc" "cgrpc" "vunit" "grpc" "grpc.client" "grpc.gen" }
+  { rank=same "go build [server]" "go build [client]" "go build [so]" "go build [gen]" }
+  { rank=same "ghdl -a [UUT]" "ghdl -a [tb_c]" "vunit.compile" "ghdl -a [hgrpc]" "gcc [wrapper]" "gcc [grpc wrapper]" }
+  { rank=same "P&R.mast" "P&R.bit" "ghdl --list-link" "ghdl --list-link [grpc]" }
+  { rank=same "wrapper.o" "wrapper.o.grpc" "vhdl.o_c" "vhdl.o" "vhdl.o_vunit" "vhdl.o_hgrpc" }
+  { rank=same "parse_ip.mast" "parse_ip.bit" "parse.mast" "parse.dgrpc" "parse.hdbm" }
+  { rank=same "plugin.mast" "plugin.grpc" "plugin.hdbm" }
+}

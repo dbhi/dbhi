@@ -1,0 +1,81 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [UUT]" [
+shape=box
+color=violet
+];
+"vhdl.o";
+wrapper [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [wrapper]" [
+shape=box
+color=orange
+];
+"wrapper.o";
+"gcc [hdbm]" [
+shape=box
+color=orange
+];
+tb_c [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [tb_c]" [
+shape=box
+color=violet
+];
+"vhdl.o_c";
+"ghdl --list-link" [
+shape=box
+color=violet
+];
+"VUnit (libs)" [
+shape=plaintext
+fontcolor=violet
+];
+"vunit.compile" [
+shape=box
+color=green
+];
+"vhdl.o_vunit";
+mambo [
+shape=plaintext
+fontcolor=orange
+];
+plugin [
+shape=plaintext
+fontcolor=orange
+];
+"parse.hdbm" [shape=box];
+"plugin.hdbm" [fontcolor=orange];
+hdbm [
+shape=octagon
+color=violet
+];
+
+// Edge definitions.
+UUT -> "ghdl -a [UUT]";
+"ghdl -a [UUT]" -> "vhdl.o";
+"vhdl.o" -> "ghdl --list-link";
+wrapper -> "gcc [wrapper]";
+"gcc [wrapper]" -> "wrapper.o";
+"wrapper.o" -> "gcc [hdbm]";
+"gcc [hdbm]" -> hdbm;
+tb_c -> "ghdl -a [tb_c]";
+"ghdl -a [tb_c]" -> "vhdl.o_c";
+"vhdl.o_c" -> "ghdl --list-link";
+"ghdl --list-link" -> "gcc [hdbm]";
+"VUnit (libs)" -> "vunit.compile";
+"vunit.compile" -> "vhdl.o_vunit";
+"vhdl.o_vunit" -> "ghdl --list-link";
+mambo -> "gcc [hdbm]";
+plugin -> "parse.hdbm";
+"parse.hdbm" -> "plugin.hdbm";
+"plugin.hdbm" -> "gcc [hdbm]";
+}

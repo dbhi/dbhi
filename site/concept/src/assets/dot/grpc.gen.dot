@@ -1,0 +1,22 @@
+strict digraph {
+// Node definitions.
+"grpc.go" [fontcolor=blue];
+"lib.proto" [shape=plaintext];
+protoc [shape=box];
+"go build [gen]" [
+shape=box
+color=blue
+];
+"grpc [gen]" [
+shape=plaintext
+fontcolor=blue
+];
+"grpc.gen" [shape=octagon];
+
+// Edge definitions.
+"grpc.go" -> "go build [gen]";
+"lib.proto" -> protoc;
+protoc -> "grpc.go";
+"go build [gen]" -> "grpc.gen";
+"grpc [gen]" -> "go build [gen]";
+}

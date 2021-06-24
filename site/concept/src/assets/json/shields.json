@@ -1,0 +1,32 @@
+[
+  {
+    "title": "License of the code",
+    "ref": "https://github.com/dbhi/docker/blob/master/LICENSE.md",
+    "src": "https://img.shields.io/badge/code%20license-LIC-bd0000.svg?longCache=true&style=flat-square"
+  },
+  {
+    "title": "License of this site",
+    "ref": "https://creativecommons.org/licenses/by/4.0/",
+    "src": "https://img.shields.io/badge/site%20license-Creative%20Commons%20Attribution--4.0-aab2ab.svg?longCache=true&style=flat-square"
+  },
+  {
+    "title": "Linux jobs at Travis-CI",
+    "ref": "https://travis-ci.com/dbhi/docker/branches",
+    "src": "https://img.shields.io/travis/com/dbhi/tool/master.svg?longCache=true&style=flat-square&logo=travis&label=tool"
+  },
+  {
+    "title": "Docker builds at Travis-CI",
+    "ref": "https://travis-ci.com/dbhi/docker/branches",
+    "src": "https://img.shields.io/travis/com/dbhi/docker/master.svg?longCache=true&style=flat-square&logo=travis&label=docker"
+  },
+  {
+    "title": "Docker Hub",
+    "ref": "https://hub.docker.com/r/aptman/dbhi/",
+    "src": "https://img.shields.io/docker/pulls/aptman/dbhi.svg?longCache=true&style=flat-square&logo=docker&logoColor=fff&label=aptman%2Fdbhi"
+  },
+  {
+    "title": "Commits since latest release",
+    "ref": "https://github.com/dbhi/docker/releases",
+    "src": "https://img.shields.io/github/commits-since/dbhi/docker/tool.svg?longCache=true&style=flat-square"
+  }
+]

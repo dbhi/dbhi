@@ -1,0 +1,16 @@
+strict digraph {
+// Node definitions.
+"bare-metal" [
+shape=plaintext
+fontcolor=orange
+];
+sdk [
+shape=box
+color=brown
+];
+eapp [shape=octagon];
+
+// Edge definitions.
+"bare-metal" -> sdk;
+sdk -> eapp;
+}

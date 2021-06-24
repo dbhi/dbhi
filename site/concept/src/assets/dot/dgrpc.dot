@@ -1,0 +1,56 @@
+strict digraph {
+// Node definitions.
+mambo [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [dgrpc]" [
+shape=box
+color=orange
+];
+plugin [
+shape=plaintext
+fontcolor=orange
+];
+"wrapper.o.grpc";
+"grpc wrapper" [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [grpc wrapper]" [
+shape=box
+color=orange
+];
+"go build [so]" [
+color=blue
+shape=box
+];
+"libgrpc-go.so" [shape=octagon];
+"grpc [client]" [
+fontcolor=blue
+shape=plaintext
+];
+"grpc.go" [fontcolor=blue];
+"lib.proto" [shape=plaintext];
+protoc [shape=box];
+"parse.dgrpc" [shape=box];
+"plugin.grpc" [fontcolor=orange];
+dgrpc [shape=octagon];
+
+// Edge definitions.
+mambo -> "gcc [dgrpc]";
+"gcc [dgrpc]" -> dgrpc;
+plugin -> "parse.dgrpc";
+"wrapper.o.grpc" -> "gcc [dgrpc]";
+"grpc wrapper" -> "gcc [grpc wrapper]";
+"gcc [grpc wrapper]" -> "wrapper.o.grpc";
+"go build [so]" -> "libgrpc-go.so";
+"libgrpc-go.so" -> "gcc [dgrpc]";
+"libgrpc-go.so" -> "gcc [grpc wrapper]";
+"grpc [client]" -> "go build [so]";
+"grpc.go" -> "go build [so]";
+"lib.proto" -> protoc;
+protoc -> "grpc.go";
+"parse.dgrpc" -> "plugin.grpc";
+"plugin.grpc" -> "gcc [dgrpc]";
+}

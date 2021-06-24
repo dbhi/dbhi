@@ -1,0 +1,34 @@
+{
+  "left": [
+    {
+      "name": "Tools",
+      "link": "/tools"
+    },
+    {
+      "name": "Flow",
+      "link": "/flow"
+    },
+    {
+      "name": "Run",
+      "link": "/run"
+    },
+    {
+      "name": "Examples",
+      "link": "/examples"
+    },
+    {
+      "name": "Use cases",
+      "link": "/cases"
+    }
+  ],
+  "right": [
+    {
+      "name": "Doc",
+      "link": "/doc"
+    },
+    {
+      "name": "About",
+      "link": "/about"
+    }
+  ]
+}

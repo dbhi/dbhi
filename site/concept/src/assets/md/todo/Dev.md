@@ -1,0 +1,5 @@
+- golangci-lint
+- dependabot
+- codeclimate
+- man page(s) See [Generating Man Pages For Your Own cobra.Command](https://github.com/spf13/cobra/blob/master/doc/man_docs.md).
+- rice-box

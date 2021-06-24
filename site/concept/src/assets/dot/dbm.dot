@@ -1,0 +1,16 @@
+strict digraph {
+// Node definitions.
+"gcc [dbm]" [
+shape=box
+color=orange
+];
+dbm [shape=octagon];
+mambo [
+shape=plaintext
+fontcolor=orange
+];
+
+// Edge definitions.
+"gcc [dbm]" -> dbm;
+mambo -> "gcc [dbm]";
+}

@@ -1,0 +1,25 @@
+strict digraph {
+// Node definitions.
+mambo [
+fontcolor=orange
+shape=plaintext
+];
+plugin [
+shape=plaintext
+fontcolor=orange
+];
+"parse.mast" [shape=box];
+"plugin.mast" [fontcolor=orange];
+"gcc [mast]" [
+shape=box
+color=orange
+];
+mast [shape=octagon];
+
+// Edge definitions.
+mambo -> "gcc [mast]";
+plugin -> "parse.mast";
+"parse.mast" -> "plugin.mast";
+"plugin.mast" -> "gcc [mast]";
+"gcc [mast]" -> mast;
+}

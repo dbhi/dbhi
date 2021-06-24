@@ -1,0 +1,72 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [UUT]" [
+shape=box
+color=violet
+];
+"vhdl.o";
+application [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [happ]" [
+shape=box
+color=orange
+];
+wrapper [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [wrapper]" [
+shape=box
+color=orange
+];
+"wrapper.o";
+happ [
+shape=octagon
+color=violet
+];
+tb_c [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [tb_c]" [
+shape=box
+color=violet
+];
+"vhdl.o_c";
+"ghdl --list-link" [
+shape=box
+color=violet
+];
+"VUnit (libs)" [
+shape=plaintext
+fontcolor=violet
+];
+"vunit.compile" [
+shape=box
+color=green
+];
+"vhdl.o_vunit";
+
+// Edge definitions.
+UUT -> "ghdl -a [UUT]";
+"ghdl -a [UUT]" -> "vhdl.o";
+"vhdl.o" -> "ghdl --list-link";
+application -> "gcc [happ]";
+"gcc [happ]" -> happ;
+wrapper -> "gcc [wrapper]";
+"gcc [wrapper]" -> "wrapper.o";
+"wrapper.o" -> "gcc [happ]";
+tb_c -> "ghdl -a [tb_c]";
+"ghdl -a [tb_c]" -> "vhdl.o_c";
+"vhdl.o_c" -> "ghdl --list-link";
+"ghdl --list-link" -> "gcc [happ]";
+"VUnit (libs)" -> "vunit.compile";
+"vunit.compile" -> "vhdl.o_vunit";
+"vhdl.o_vunit" -> "ghdl --list-link";
+}

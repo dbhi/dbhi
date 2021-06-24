@@ -1,0 +1,34 @@
+strict digraph {
+// Node definitions.
+"go build [so]" [
+shape=box
+color=blue
+];
+"libgrpc-go.so" [shape=octagon];
+"gcc [grpc client]" [
+shape=box
+color=orange
+];
+"grpc [client]" [
+shape=plaintext
+fontcolor=blue
+];
+"grpc.go" [fontcolor=blue];
+"lib.proto" [shape=plaintext];
+protoc [shape=box];
+"grpc client" [
+shape=plaintext
+fontcolor=orange
+];
+cgrpc [shape=octagon];
+
+// Edge definitions.
+"go build [so]" -> "libgrpc-go.so";
+"libgrpc-go.so" -> "gcc [grpc client]";
+"gcc [grpc client]" -> cgrpc;
+"grpc [client]" -> "go build [so]";
+"grpc.go" -> "go build [so]";
+"lib.proto" -> protoc;
+protoc -> "grpc.go";
+"grpc client" -> "gcc [grpc client]";
+}
