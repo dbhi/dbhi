@@ -1,0 +1,91 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [UUT]" [
+shape=box
+color=violet
+];
+"vhdl.o";
+"VUnit (libs)" [
+shape=plaintext
+fontcolor=violet
+];
+"vunit.compile" [
+shape=box
+color=green
+];
+"vhdl.o_vunit";
+"ghdl --list-link [grpc]" [
+shape=box
+color=violet
+];
+"srcs.grpc.hgrpc" [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [hgrpc]" [
+color=orange
+shape=box
+];
+"wrapper.o.grpc";
+hgrpc [
+color=violet
+shape=octagon
+];
+tb_grpc [
+shape=plaintext
+fontcolor=violet
+];
+"ghdl -a [hgrpc]" [
+color=violet
+shape=box
+];
+"vhdl.o_hgrpc";
+"grpc wrapper" [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [grpc wrapper]" [
+shape=box
+color=orange
+];
+"go build [so]" [
+shape=box
+color=blue
+];
+"libgrpc-go.so" [shape=octagon];
+"grpc [client]" [
+shape=plaintext
+fontcolor=blue
+];
+"grpc.go" [fontcolor=blue];
+"lib.proto" [shape=plaintext];
+protoc [shape=box];
+
+// Edge definitions.
+UUT -> "ghdl -a [UUT]";
+"ghdl -a [UUT]" -> "vhdl.o";
+"vhdl.o" -> "ghdl --list-link [grpc]";
+"VUnit (libs)" -> "vunit.compile";
+"vunit.compile" -> "vhdl.o_vunit";
+"vhdl.o_vunit" -> "ghdl --list-link [grpc]";
+"ghdl --list-link [grpc]" -> "gcc [hgrpc]";
+"srcs.grpc.hgrpc" -> "gcc [hgrpc]";
+"gcc [hgrpc]" -> hgrpc;
+"wrapper.o.grpc" -> "gcc [hgrpc]";
+tb_grpc -> "ghdl -a [hgrpc]";
+"ghdl -a [hgrpc]" -> "vhdl.o_hgrpc";
+"vhdl.o_hgrpc" -> "ghdl --list-link [grpc]";
+"grpc wrapper" -> "gcc [grpc wrapper]";
+"gcc [grpc wrapper]" -> "wrapper.o.grpc";
+"go build [so]" -> "libgrpc-go.so";
+"libgrpc-go.so" -> "gcc [hgrpc]";
+"libgrpc-go.so" -> "gcc [grpc wrapper]";
+"grpc [client]" -> "go build [so]";
+"grpc.go" -> "go build [so]";
+"lib.proto" -> protoc;
+protoc -> "grpc.go";
+}

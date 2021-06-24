@@ -1,0 +1,29 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+"VUnit (libs)" [
+shape=plaintext
+fontcolor=violet
+];
+vunit [
+shape=octagon
+color=green
+];
+"srcs.py" [
+shape=plaintext
+fontcolor=green
+];
+tb_vunit [
+shape=plaintext
+fontcolor=violet
+];
+
+// Edge definitions.
+UUT -> vunit;
+"VUnit (libs)" -> vunit;
+"srcs.py" -> vunit;
+tb_vunit -> vunit;
+}

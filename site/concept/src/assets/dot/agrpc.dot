@@ -1,0 +1,47 @@
+strict digraph {
+// Node definitions.
+application [
+fontcolor=orange
+shape=plaintext
+];
+"gcc [agrpc]" [
+shape=box
+color=orange
+];
+"wrapper.o.grpc";
+"grpc wrapper" [
+shape=plaintext
+fontcolor=orange
+];
+"gcc [grpc wrapper]" [
+shape=box
+color=orange
+];
+agrpc [shape=octagon];
+"go build [so]" [
+shape=box
+color=blue
+];
+"libgrpc-go.so" [shape=octagon];
+"grpc [client]" [
+shape=plaintext
+fontcolor=blue
+];
+"grpc.go" [fontcolor=blue];
+"lib.proto" [shape=plaintext];
+protoc [shape=box];
+
+// Edge definitions.
+application -> "gcc [agrpc]";
+"gcc [agrpc]" -> agrpc;
+"wrapper.o.grpc" -> "gcc [agrpc]";
+"grpc wrapper" -> "gcc [grpc wrapper]";
+"gcc [grpc wrapper]" -> "wrapper.o.grpc";
+"go build [so]" -> "libgrpc-go.so";
+"libgrpc-go.so" -> "gcc [agrpc]";
+"libgrpc-go.so" -> "gcc [grpc wrapper]";
+"grpc [client]" -> "go build [so]";
+"grpc.go" -> "go build [so]";
+"lib.proto" -> protoc;
+protoc -> "grpc.go";
+}

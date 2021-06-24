@@ -1,0 +1,55 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+"synth_ip.bit" [
+shape=box
+color=brown
+];
+"vivado_prj.bit" [
+fontcolor=brown
+shape=plaintext
+];
+"synth_sys.bit" [
+shape=box
+color=brown
+];
+"P&R.bit" [
+color=brown
+shape=box
+];
+"impl.bit" [
+shape=box
+color=brown
+];
+bit [
+shape=octagon
+color=brown
+];
+"vivado_ip.bit" [
+shape=plaintext
+fontcolor=brown
+];
+"parse_ip.bit" [shape=box];
+"ip.bit";
+wrap_bit [
+shape=plaintext
+fontcolor=violet
+];
+"netlist.bit";
+
+// Edge definitions.
+UUT -> "synth_ip.bit";
+"synth_ip.bit" -> "netlist.bit";
+"vivado_prj.bit" -> "synth_sys.bit";
+"synth_sys.bit" -> "P&R.bit";
+"P&R.bit" -> "impl.bit";
+"impl.bit" -> bit;
+"vivado_ip.bit" -> "parse_ip.bit";
+"parse_ip.bit" -> "ip.bit";
+"ip.bit" -> "synth_sys.bit";
+wrap_bit -> "synth_ip.bit";
+"netlist.bit" -> "ip.bit";
+}

@@ -1,0 +1,16 @@
+strict digraph {
+// Node definitions.
+"gcc [app]" [
+shape=box
+color=orange
+];
+app [shape=octagon];
+application [
+fontcolor=orange
+shape=plaintext
+];
+
+// Edge definitions.
+"gcc [app]" -> app;
+application -> "gcc [app]";
+}

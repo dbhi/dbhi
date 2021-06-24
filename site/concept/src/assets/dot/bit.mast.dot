@@ -1,0 +1,55 @@
+strict digraph {
+// Node definitions.
+UUT [
+shape=plaintext
+fontcolor=violet
+];
+wrap_mast [
+shape=plaintext
+fontcolor=violet
+];
+"synth_ip.mast" [
+color=brown
+shape=box
+];
+"netlist.mast";
+"ip.mast";
+"vivado_prj.mast" [
+shape=plaintext
+fontcolor=brown
+];
+"synth_sys.mast" [
+shape=box
+color=brown
+];
+"P&R.mast" [
+shape=box
+color=brown
+];
+"impl.mast" [
+shape=box
+color=brown
+];
+"bit.mast" [
+shape=octagon
+color=brown
+];
+"vivado_ip.mast" [
+shape=plaintext
+fontcolor=brown
+];
+"parse_ip.mast" [shape=box];
+
+// Edge definitions.
+UUT -> "synth_ip.mast";
+wrap_mast -> "synth_ip.mast";
+"synth_ip.mast" -> "netlist.mast";
+"netlist.mast" -> "ip.mast";
+"ip.mast" -> "synth_sys.mast";
+"vivado_prj.mast" -> "synth_sys.mast";
+"synth_sys.mast" -> "P&R.mast";
+"P&R.mast" -> "impl.mast";
+"impl.mast" -> "bit.mast";
+"vivado_ip.mast" -> "parse_ip.mast";
+"parse_ip.mast" -> "ip.mast";
+}
