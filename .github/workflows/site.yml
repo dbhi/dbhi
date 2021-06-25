@@ -47,13 +47,14 @@ jobs:
         yarn
         yarn build
       env:
-        BASE_URL: '/concept'
+        BASE_URL: '/concept/'
 
     - name: 'publish site to gh-pages'
       if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi' && endsWith(github.ref, '/main')
       env:
         GH_DEPKEY: ${{ secrets.GHA_DEPLOY_KEY }}
       run: |
+        cp site/404.html site/dist/
         cp -vr site/concept/dist site/dist/concept
         cd site/dist/
         touch .nojekyll
