@@ -19,6 +19,22 @@ Vue.use(Buefy);
 
 const marked = require("marked");
 Vue.mixin({
+  // This is a workaround for GitHub Pages not serving routes without an index.html.
+  // 404.html will be loaded, which will set `GoToPath` and the navigate to `/concept`,
+  // where this site is expected to be hosted: dbhi.github.io/concept
+  mounted: function() {
+    let path = localStorage.getItem('GoToPath');
+    if (path) {
+      console.log("GoToPath:", path);
+      localStorage.removeItem('GoToPath');
+      let _path = path.split('/');
+      if (_path[1] === 'concept') {
+        this.$router.replace({path: _path.slice(2).join('/')});
+      } else {
+        window.location.href='/';
+      };
+    };
+  },
   methods: {
     marked: function(input) {
       if (input) {
