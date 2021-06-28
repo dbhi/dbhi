@@ -19,6 +19,20 @@ eapp: bare-metal application.
 mast: DBM plugin to be used with MAST.
 ---
 
-Since DBHI is an iterative design flow, variations to similar groups of sources files need to be continuously compiled and tested. In order to do so, several build tools need to be used, such as `make`, `cmake`, `go build`, etc. Moreover, supporting multiple use cases (see [Use cases](/cases)), produces a rather complex depency graph, as shown below. This section allows the user to analyse the subset of tasks that need to be executed to build a specific binary for a given use case.
+Since DBHI is an iterative design flow, variations to similar groups of sources files need to be continuously compiled
+and tested.
+In order to do so, several build tools need to be used, such as `make`, `cmake`, `go build`, etc.
+Moreover, supporting multiple use cases (see [Use cases](/cases)), produces a rather complex dependency graph, as shown
+below.
+This section allows the user to analyse the subset of tasks that need to be executed to build a specific binary for a
+given use case.
 
-In order to automate task execution, a companion golang package was designed. [github.com/dbhi/run](https://github.com/dbhi/run) allows to analyse complex dependency graphs (multitree directed acyclic graphs), and retrieve or execute ordered lists of tasks. The functionaly of `run` is integrated into the [`dbhi` CLI tool](/doc), but it can also be used as a standalone static binary ([see run: README.md#usage]((https://github.com/dbhi/run/blob/master/README.md#usage))). Users willing to extend the proposed flow with other tools such as Verilator, Chisel or High-Level Synthesis (HLS) should take this approach. Please reach us at [github.com/dbhi/dbhi](https://github.com/dbhi/dbhi) for any issue, bug report or contributions regarding the addition of use cases to the list below.
+In order to automate task execution, a companion golang package was designed.
+[github.com/dbhi/run](https://github.com/dbhi/run) allows analysing complex dependency graphs (multitree directed
+acyclic graphs), and retrieving or executing ordered lists of tasks.
+The functionaly of `run` is integrated into the `dbhi` CLI tool, but it can also be used as a standalone static binary
+([see run: README.md#usage](https://github.com/dbhi/run/blob/master/README.md#usage)).
+Users willing to extend the proposed flow with other tools such as Verilator, Chisel or High-Level Synthesis (HLS)
+should take this approach.
+Please reach us at [github.com/dbhi/dbhi](https://github.com/dbhi/dbhi) for any issue, bug report or contributions
+regarding the addition of use cases to the list below.
