@@ -17,7 +17,7 @@
                 <div class="level-item is-grouped" @click="toggle(i, k)">
                   <a class="control">
                     <b-icon
-                      icon="chevron-right"
+                      :icon="'chevron-' + (show[i][k] ? 'down' : 'right')"
                       :custom-class="show[i][k] ? 'is-expanded' : ''"
                     >
                     </b-icon>
@@ -149,11 +149,5 @@ export default {
 <style lang="scss" scoped>
 .level {
   margin-bottom: 0 !important;
-}
-</style>
-
-<style lang="scss">
-.is-expanded {
-  transform: rotate(90deg);
 }
 </style>
