@@ -2,9 +2,9 @@
 intro: "The DBHI design flow is based on an automation CLI constructed from existing off-the-shelf tools. In this section, the tools are enumerated and a brief description is provided along with references to the corresponding web sites, repositories and/or Wikipedia entries. The ones on the left column are required for almost any use case, while the need for those on the right column depends on specific contexts."
 ---
 
-## Docker images
+## Container images
 
-Ready-to-use [docker](https://www.docker.com/) images are available at [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools. Images provided by [docker-library/official-images](https://github.com/docker-library/official-images#architectures-other-than-amd64) are used to build manifests for `amd64`, `arm64v8` and `arm32v7` platforms. Currently, all the images are based on `Ubuntu 18.04 (bionic)`. See [github.com/dbhi/docker](https://github.com/dbhi/docker) for further details.
+Ready-to-use [docker](https://www.docker.com/)|[podman](https://podman.io) images are available at [docker.io/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools. Images provided by [docker-library/official-images](https://github.com/docker-library/official-images#architectures-other-than-amd64) are used to build manifests for `amd64`, `arm64v8` and `arm32v7` platforms. Currently, all the images are based on `Ubuntu 18.04 (bionic)`. See [github.com/dbhi/containers](https://github.com/dbhi/containers) for further details.
 
 If `docker` is available on your target platform, using the provided images is recommended, because the overhead is negligible, it helps reproducibility and it significantly reduces setup time. The following script can be used to test if a platform fulfills the requirements to run the docker daemon:
 
@@ -14,7 +14,7 @@ curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-conf
 
 ## Manual installation
 
-Should you want to install the tools on your host, the dockerfiles at [github.com/dbhi/docker](https://github.com/dbhi/docker/blob/docker/dockerfiles) can be used as a reference. I.e., the same steps can be reproduced in a shell script. Nonetheless, please read the following notes carefully:
+Should you want to install the tools on your host, the dockerfiles at [github.com/dbhi/containers](https://github.com/dbhi/containers) can be used as a reference. I.e., the same steps can be reproduced in a shell script. Nonetheless, please read the following notes carefully:
 
 - Ensure that all the libraries are built with `-fPIC` when building GHDL.
 - GHDL must be available in the `$PATH`.
