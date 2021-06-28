@@ -31,14 +31,16 @@
           {{ showCode ? 'Hide' : 'Show' }} code
         </b-switch>
     </div>
-    <graph-viz
+
+    <GraphViz
       :dotData="graphs[active]"
       :showCode="showCode"/>
+
   </div>
 </template>
 
 <script>
-import graphViz from "@/components/graphViz.vue";
+import GraphViz from "@/components/GraphViz";
 
 var graphs = {};
 require.context("@/assets/dot/", false, /\.dot$/)
@@ -64,7 +66,7 @@ for (var k in c.data) {
 export default {
   name: "run",
   components: {
-  	graphViz,
+  	GraphViz,
   },
   data() {
     return {
