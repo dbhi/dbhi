@@ -6,7 +6,6 @@
         <a href="https://github.com/umarcor">Unai Martinez-Corral</a> and
         <a href="https://github.com/GuillermoCallaghan">Guillermo Callaghan</a>
       </div>
-      <AboutVue />
     </div>
     <ToDo />
   </div>
