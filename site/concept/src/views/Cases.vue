@@ -14,6 +14,7 @@
       :total="total"
     />
 
+    <hr>
     <CasesTableKey class="box" v-show="showKey" v-model="keys" />
 
     <div class="box has-text-justified" v-show="'content' in tabsel">
@@ -26,7 +27,7 @@
     </div>
 
     <div
-      class="section content has-text-justified"
+      class="content has-text-justified"
       v-html="marked(content)"
     ></div>
   </div>

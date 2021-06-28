@@ -19,70 +19,102 @@
       default-sort="status"
       @click="clicked"
     >
-      <template slot-scope="props">
-        <b-table-column
-          field="status"
-          label="Status"
-          width="40"
-          centered
-          sortable
+
+      <b-table-column
+        v-slot="props"
+        field="status"
+        label="Status"
+        width="75"
+        sortable
+      >
+        <b-icon
+          :icon="stIcon(props.row.status)"
+          :type="stType(props.row.status)"
+        ></b-icon>
+      </b-table-column>
+
+      <b-table-column
+        v-slot="props"
+        field="id"
+        label=" ID "
+        width="60"
+        centered
+      >
+        {{ props.row.id }}
+      </b-table-column>
+
+      <b-table-column
+        v-slot="props"
+        field="src"
+        label="Source"
+        width="40"
+        sortable
+      >
+        <span
+          class="tag"
+          :class="props.row.src ? 'is-success' : 'is-warning'"
         >
-          <b-icon
-            :icon="stIcon(props.row.status)"
-            :type="stType(props.row.status)"
-          ></b-icon>
-        </b-table-column>
-        <b-table-column field="id" label="ID" width="40" centered>
-          {{ props.row.id }}
-        </b-table-column>
+          {{ props.row.src ? "y" : "n" }}
+        </span>
+      </b-table-column>
 
-        <b-table-column field="src" label="Source" width="40" sortable>
-          <span
-            class="tag"
-            :class="props.row.src ? 'is-success' : 'is-warning'"
+      <b-table-column
+        v-slot="props"
+        field="soft"
+        label="Software"
+        centered
+        sortable
+      >
+        {{ props.row.soft }}
+      </b-table-column>
+
+      <b-table-column
+        v-slot="props"
+        field="hard"
+        label="Hardware"
+        centered
+        sortable
+      >
+        {{ props.row.hard }}
+      </b-table-column>
+
+      <b-table-column
+        v-slot="props"
+        field="artifacts"
+        label="Artifacts"
+      >
+        <b-field grouped group-multiline>
+          <div class="control" v-for="a in props.row.artifacts" :key="a">
+            <b-taglist attached>
+              <b-tag
+                size="is-small"
+                v-for="i in a.split(':')"
+                :key="a + i"
+                :type="tagColor(i)"
+                >{{ i }}</b-tag
+              >
+            </b-taglist>
+          </div>
+        </b-field>
+      </b-table-column>
+
+      <b-table-column
+        v-slot="props"
+        field="dependencies"
+        label="Dependencies"
+      >
+        <b-taglist>
+          <b-tag
+            size="is-small"
+            v-for="d in props.row.dependencies"
+            :key="d"
+            :type="tagColor(d)"
+            >{{ d }}</b-tag
           >
-            {{ props.row.src ? "y" : "n" }}
-          </span>
+        </b-taglist>
         </b-table-column>
 
-        <b-table-column field="soft" label="Software" sortable>
-          {{ props.row.soft }}
-        </b-table-column>
-
-        <b-table-column field="hard" label="Hardware" sortable>
-          {{ props.row.hard }}
-        </b-table-column>
-
-        <b-table-column field="artifacts" label="Artifacts">
-          <b-field grouped group-multiline>
-            <div class="control" v-for="a in props.row.artifacts" :key="a">
-              <b-taglist attached>
-                <b-tag
-                  size="is-small"
-                  v-for="i in a.split(':')"
-                  :key="a + i"
-                  :type="tagColor(i)"
-                  >{{ i }}</b-tag
-                >
-              </b-taglist>
-            </div>
-          </b-field>
-        </b-table-column>
-
-        <b-table-column field="dependencies" label="Dependencies">
-          <b-taglist>
-            <b-tag
-              size="is-small"
-              v-for="d in props.row.dependencies"
-              :key="d"
-              :type="tagColor(d)"
-              >{{ d }}</b-tag
-            >
-          </b-taglist>
-        </b-table-column>
-      </template>
-
-      <template slot="bottom-left">
+      <template #bottom-left>
         <div class="field is-grouped">
           <div class="control">
             <b-switch
@@ -115,7 +147,7 @@
         </div>
       </template>
 
-      <template slot="empty">
+      <template #empty>
         <section class="section">
           <div class="content has-text-grey has-text-centered">
             <p>
@@ -125,6 +157,7 @@
           </div>
         </section>
       </template>
+
     </b-table>
   </section>
 </template>
