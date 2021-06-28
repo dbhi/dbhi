@@ -12,7 +12,7 @@ import Viz from 'viz.js'
 let viz = new Viz(require('viz.js/lite.render.js'));
 
 export default {
-  name: 'graphViz',
+  name: 'GraphViz',
   props: {
     dotData: String,
     showCode: Boolean,
