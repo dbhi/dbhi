@@ -20,8 +20,8 @@ Resources, tools and examples are organized in multiple repositories:
   - [beehive-lab/mambo](https://github.com/beehive-lab/mambo): a low-overhead dynamic binary instrumentation and modification tool for ARM.
   - [dbhi/gRPC](https://github.com/dbhi/gRPC): go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
 - Other helper repositories:
-  - [dbhi/docker](https://github.com/dbhi/docker): sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
-  - [dbhi/qus](https://github.com/dbhi/qus): qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/docker`.
+  - [dbhi/containers](https://github.com/dbhi/containers): sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [docker.io/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
+  - [dbhi/qus](https://github.com/dbhi/qus): qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/containers`.
 
 ## Environment setup
 
@@ -37,11 +37,11 @@ The list of required tools to run the examples is the following:
 
 ---
 
-Ready-to-use container images (for [docker](https://www.docker.com/)/[podman](https://podman.io/)) are available at [hub.docker.com/r/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools.
+Ready-to-use container images (for [docker](https://www.docker.com/)/[podman](https://podman.io/)) are available at [docker.io/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/). These images include all the required dependencies to evaluate the design flow with lightweight, open and free tools.
 
-Images provided by [docker-library/official-images](https://github.com/docker-library/official-images#architectures-other-than-amd64) are used to build manifests for `amd64`, `arm64v8` and `arm32v7` platforms. Currently, all the images are based on `Ubuntu 18.04 (bionic)`. See [github.com/dbhi/docker](https://github.com/dbhi/docker) for further details.
+Images provided by [docker-library/official-images](https://github.com/docker-library/official-images#architectures-other-than-amd64) are used to build manifests for `amd64`, `arm64v8` and `arm32v7` platforms. Currently, all the images are based on `Ubuntu 18.04 (bionic)`. See [dbhi/containers](https://github.com/dbhi/containers) for further details.
 
-If `docker` is available on your target platform, using the provided images is recommended, because the overhead is negligible, it helps reproducibility and it significantly reduces setup time. The following script can be used to test if a platform fulfills the requirements to run the docker daemon:
+If `docker`|`podman` is available on your target platform, using the provided images is recommended, because the overhead is negligible, it helps reproducibility and it significantly reduces setup time. The following script can be used to test if a platform fulfills the requirements to run the docker daemon:
 
 ``` bash
 curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh | bash -
@@ -49,7 +49,7 @@ curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-conf
 
 ---
 
-Should you want to install the tools natively on your host, the dockerfiles at [github.com/dbhi/docker](https://github.com/dbhi/docker/blob/docker/dockerfiles) can be used as a reference. I.e., the same steps can be reproduced in a shell script. Nonetheless, please read the following notes carefully:
+Should you want to install the tools natively on your host, the dockerfiles at [dbhi/containers](https://github.com/dbhi/containers) can be used as a reference. I.e., the same steps can be reproduced in a shell script. Nonetheless, please read the following notes carefully:
 
 - Ensure that all the libraries are built with `-fPIC` when building GHDL.
 - VUnit can be installed in a default location (e.g. `pip install vunit_hdl`), or:
