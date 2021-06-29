@@ -5,9 +5,11 @@
   "author": "umarcor",
   "repository": "https://github.com/dbhi/dbhi",
   "scripts": {
+    "prettify": "prettier --write .",
+    "check": "prettier --check .",
+    "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "@mdi/font": "^3.5.95",
@@ -26,11 +28,20 @@
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^5.0.0",
     "gray-matter-loader": "^0.0.10",
+    "prettier": "^2.3.2",
     "raw-loader": "^2.0.0",
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
   }
 }
