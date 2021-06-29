@@ -1,32 +1,42 @@
 [
   {
-    "title": "License of the code",
-    "ref": "https://github.com/dbhi/docker/blob/master/LICENSE.md",
-    "src": "https://img.shields.io/badge/code%20license-LIC-bd0000.svg?longCache=true&style=flat-square"
+    "title": "GitHub repository dbhi/dbhi",
+    "ref": "https://github.com/dbhi/dbhi",
+    "src": "https://img.shields.io/badge/dbhi-dbhi-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
   },
   {
-    "title": "License of this site",
-    "ref": "https://creativecommons.org/licenses/by/4.0/",
-    "src": "https://img.shields.io/badge/site%20license-Creative%20Commons%20Attribution--4.0-aab2ab.svg?longCache=true&style=flat-square"
+    "title": "GitHub repository dbhi/run",
+    "ref": "https://github.com/dbhi/run",
+    "src": "https://img.shields.io/badge/dbhi-run-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
   },
   {
-    "title": "Linux jobs at Travis-CI",
-    "ref": "https://travis-ci.com/dbhi/docker/branches",
-    "src": "https://img.shields.io/travis/com/dbhi/tool/master.svg?longCache=true&style=flat-square&logo=travis&label=tool"
+    "title": "GitHub repository dbhi/qus",
+    "ref": "https://github.com/dbhi/qus",
+    "src": "https://img.shields.io/badge/dbhi-qus-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
   },
   {
-    "title": "Docker builds at Travis-CI",
-    "ref": "https://travis-ci.com/dbhi/docker/branches",
-    "src": "https://img.shields.io/travis/com/dbhi/docker/master.svg?longCache=true&style=flat-square&logo=travis&label=docker"
+    "title": "GitHub repository dbhi/containers",
+    "ref": "https://github.com/dbhi/containers",
+    "src": "https://img.shields.io/badge/dbhi-containers-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
   },
   {
     "title": "Docker Hub",
     "ref": "https://hub.docker.com/r/aptman/dbhi/",
-    "src": "https://img.shields.io/docker/pulls/aptman/dbhi.svg?longCache=true&style=flat-square&logo=docker&logoColor=fff&label=aptman%2Fdbhi"
+    "src": "https://img.shields.io/docker/pulls/aptman/dbhi.svg?longCache=true&style=flat-square&logo=docker&logoColor=fff&label=docker.io%2Faptman%2Fdbhi"
   },
   {
-    "title": "Commits since latest release",
-    "ref": "https://github.com/dbhi/docker/releases",
-    "src": "https://img.shields.io/github/commits-since/dbhi/docker/tool.svg?longCache=true&style=flat-square"
+    "title": "GitHub repository dbhi/gRPC",
+    "ref": "https://github.com/dbhi/gRPC",
+    "src": "https://img.shields.io/badge/dbhi-gRPC-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
+  },
+  {
+    "title": "GitHub repository dbhi/binhook",
+    "ref": "https://github.com/dbhi/binhook",
+    "src": "https://img.shields.io/badge/dbhi-binhook-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
+  },
+  {
+    "title": "GitHub repository dbhi/vboard",
+    "ref": "https://github.com/dbhi/vboard",
+    "src": "https://img.shields.io/badge/dbhi-vboard-f2f1ef.svg?longCache=true&style=flat-square&logo=GitHub&logoColor=f2f1ef"
   }
 ]
