@@ -21,7 +21,7 @@
 <script>
 var todos = {};
 
-['FixMe', 'ToDo', 'Site', 'CLI'].forEach(function (e) {
+['Contributions', 'ToDo', 'Site', 'CLI'].forEach(function (e) {
   var d = require('@/assets/md/todo/' + e + '.md').default;
   todos[e] = d.content;
 });
@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       todos: todos,
-      active: 'ToDo',
+      active: 'Contributions',
     };
   },
 };
