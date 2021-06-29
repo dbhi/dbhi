@@ -1,12 +1,12 @@
 <template>
-<v-app>
-  <Drawer/>
-  <AppBar/>
-  <v-main>
-    <router-view/>
-  </v-main>
-  <Foot/>
-</v-app>
+  <v-app>
+    <Drawer />
+    <AppBar />
+    <v-main>
+      <router-view />
+    </v-main>
+    <Foot />
+  </v-app>
 </template>
 
 <script>
@@ -19,10 +19,10 @@ export default {
   components: {
     Drawer,
     AppBar,
-    Foot
+    Foot,
   },
-  created () {
+  created() {
     this.$vuetify.theme.dark = false;
-  }
+  },
 };
 </script>
