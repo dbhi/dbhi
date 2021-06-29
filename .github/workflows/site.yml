@@ -22,10 +22,23 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: Build
+    - name: Get dependencies
       run: |
         cd site
         yarn
+        cd concept
+        yarn
+
+    - name: Check style
+      run: |
+        cd site
+        yarn run check
+        cd concept
+        yarn run check
+
+    - name: Build site
+      run: |
+        cd site
         yarn build
 
     - uses: actions/upload-artifact@v2
@@ -33,23 +46,26 @@ jobs:
         name: DBHI-site
         path: site/dist
 
-    - name: Build for GHP
+    - name: Build site (concept)
+      run: |
+        cd site/concept
+        yarn build
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: DBHI-concept
+        path: site/concept/dist
+
+    - name: Build for GitHub Pages
       run: |
         cd site
         rm -rf dist
-        yarn build
-      env:
-        BASE_URL: ''
+        BASE_URL='' yarn build
+        cd concept
+        rm -rf dist
+        BASE_URL='/concept/' yarn build
 
-    - name: Build concept for GHP
-      run: |
-        cd site/concept
-        yarn
-        yarn build
-      env:
-        BASE_URL: '/concept/'
-
-    - name: 'publish site to gh-pages'
+    - name: 'Publish site to GitHub Pages'
       if: github.event_name != 'pull_request' && github.repository == 'dbhi/dbhi' && endsWith(github.ref, '/main')
       env:
         GH_DEPKEY: ${{ secrets.GHA_DEPLOY_KEY }}
@@ -72,10 +88,12 @@ jobs:
         ssh-agent -k
         cd ..
         rm -rf dist
+
     - name: Build with Electron
       run: |
         cd site
         yarn electron:build --publish never
+
     - uses: actions/upload-artifact@v2
       with:
         name: DBHI-desktop
