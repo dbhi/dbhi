@@ -13,6 +13,13 @@
 - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842109/QEMU+SystemC+and+TLM+CoSimulation
   - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842060/QEMU#QEMU-RunningaLinuxKernelImageInQEMU
 
+---
+
+- golangci-lint
+- codeclimate
+- man page(s) See [Generating Man Pages For Your Own cobra.Command](https://github.com/spf13/cobra/blob/master/doc/man_docs.md).
+- rice-box
+
 # Enhance docker images
 
 - Add docker images based on Debian.

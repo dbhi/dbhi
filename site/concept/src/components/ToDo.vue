@@ -21,7 +21,7 @@
 <script>
 var todos = {};
 
-["FixMe", "ToDo", "Site", "CLI", "Dev"].forEach(function(e) {
+["FixMe", "ToDo", "Site", "CLI"].forEach(function(e) {
   var d = require("@/assets/md/todo/" + e + ".md").default;
   todos[e] = d.content;
 });
