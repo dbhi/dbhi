@@ -1,11 +1,11 @@
 <p align="center">
-  <a title="Site" href="https://dbhi.github.io"><img src="https://img.shields.io/website.svg?label=dbhi.github.io&longCache=true&style=flat-square&url=http%3A%2F%2Fdbhi.github.io%2Findex.html"></a><!--
+  <a title="Site" href="https://dbhi.github.io"><img src="https://img.shields.io/website.svg?label=dbhi.github.io&longCache=true&style=flat-square&url=http%3A%2F%2Fdbhi.github.io%2Findex.html&logo=GitHub"></a><!--
   -->
   <a title="DevDependency Status" href="https://david-dm.org/dbhi/dbhi?path=site&type=dev"><img src="https://img.shields.io/david/dev/dbhi/dbhi.svg?path=site&longCache=true&style=flat-square&label=devdeps&logo=npm"></a><!--
   -->
   <a title="Dependency Status" href="https://david-dm.org/dbhi/dbhi?path=site"><img src="https://img.shields.io/david/dbhi/dbhi.svg?path=site&longCache=true&style=flat-square&label=deps&logo=npm"></a><!--
   -->
-  <a title="'site' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Asite"><img alt="'site' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/site?longCache=true&style=flat-square&label=site&logo=github"></a>
+  <a title="'site' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Asite"><img alt="'site' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/site?longCache=true&style=flat-square&label=site&logo=Github%20Actions&logoColor=fff"></a>
 </p>
 
 Dynamic Binary Hardware Injection (DBHI) is a work flow towards decoupled functional hardware-software co-design on SoCs with FPGA, through injection of compiled HDL designs. The design flow is constructed from existing off-the-shelf tools, and it is tested on multiple architectures (ARMv7, ARMv8 and x86-64).
