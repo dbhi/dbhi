@@ -92,8 +92,8 @@ export default {
         ref: "dbhi/gRPC"
       },
       {
-        name: "docker",
-        ref: "dbhi/docker"
+        name: "containers",
+        ref: "dbhi/containers"
       },
       {
         name: "qus",
