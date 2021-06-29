@@ -1,6 +1,6 @@
 ---
-tool: "GtkWave"
-site: "http://gtkwave.sourceforge.net/"
+tool: 'GtkWave'
+site: 'http://gtkwave.sourceforge.net/'
 ---
 
 no content yet

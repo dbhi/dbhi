@@ -5,7 +5,7 @@
         <li
           v-for="(v, k) in todos"
           :key="(v, k)"
-          :class="{ 'is-active': k == active }"
+          :class="{'is-active': k == active}"
         >
           <a @click="active = k">{{ k }}</a>
         </li>
@@ -21,18 +21,18 @@
 <script>
 var todos = {};
 
-["FixMe", "ToDo", "Site", "CLI"].forEach(function(e) {
-  var d = require("@/assets/md/todo/" + e + ".md").default;
+['FixMe', 'ToDo', 'Site', 'CLI'].forEach(function (e) {
+  var d = require('@/assets/md/todo/' + e + '.md').default;
   todos[e] = d.content;
 });
 
 export default {
-  name: "todo",
+  name: 'todo',
   data() {
     return {
       todos: todos,
-      active: "ToDo"
+      active: 'ToDo',
     };
-  }
+  },
 };
 </script>

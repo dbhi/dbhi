@@ -1,12 +1,13 @@
 ---
 id: yaa
-status: "supported"
+status: 'supported'
 artifacts:
   - happ:arm
 dependencies:
   - ghdl
   - gcc
 ---
+
 - Build VHDL sources on/for ARM.
 - Build VHPI wrapper (C) on/for ARM.
 - Modify the sources to use VHPI wrapper (C), instead of the original function.

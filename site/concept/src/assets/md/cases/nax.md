@@ -1,6 +1,6 @@
 ---
 id: nax
-status: "supported"
+status: 'supported'
 artifacts:
   - grpc
   - dgrpc:arm
@@ -13,6 +13,7 @@ dependencies:
   - golang
   - protoc
 ---
+
 - Build VHDL sources on/for amd64.
 - Build VHPI wrapper (C) on/for amd64.
 - Build gRPC client (C or golang) with the VHPI wrapper (C) on/for amd64.

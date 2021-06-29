@@ -1,9 +1,7 @@
 <template>
   <div class="tools container">
     <section class="section">
-      <h1 class="title">
-        Third-party tools
-      </h1>
+      <h1 class="title">Third-party tools</h1>
       <div class="content has-text-justified">{{ intro }}</div>
     </section>
     <div class="tile is-ancestor">
@@ -34,7 +32,7 @@
                     <b-icon icon="github-circle" custom-size="mdi-24px">
                     </b-icon>
                   </a>
-                  <p v-if="!v.gh" style="opacity: 0.5;">
+                  <p v-if="!v.gh" style="opacity: 0.5">
                     <b-icon icon="github-circle" custom-size="mdi-24px">
                     </b-icon>
                   </p>
@@ -47,7 +45,7 @@
                   >
                     <b-icon icon="wikipedia" custom-size="mdi-24px"> </b-icon>
                   </a>
-                  <p v-if="!v.wikipedia" style="opacity: 0.5;">
+                  <p v-if="!v.wikipedia" style="opacity: 0.5">
                     <b-icon icon="wikipedia" custom-size="mdi-24px"> </b-icon>
                   </p>
                 </div>
@@ -55,7 +53,7 @@
                   <a :href="v.site" v-if="v.site">
                     <b-icon icon="web" custom-size="mdi-24px"></b-icon>
                   </a>
-                  <p :href="v.site" v-if="!v.site" style="opacity: 0.5;">
+                  <p :href="v.site" v-if="!v.site" style="opacity: 0.5">
                     <b-icon icon="web" custom-size="mdi-24px"></b-icon>
                   </p>
                 </div>
@@ -79,22 +77,22 @@
 
 <script>
 var tools = {};
-var cols = { left: {}, right: {} };
-var show = { left: {}, right: {} };
+var cols = {left: {}, right: {}};
+var show = {left: {}, right: {}};
 
 [
-  "ghdl",
-  "vunit",
-  "mambo",
-  "dynamorio",
-  "gcc",
-  "spinalhdl",
-  "golang",
-  "protoc",
-  "gtkwave",
-  "docker"
-].forEach(function(e) {
-  var d = require("@/assets/md/tools/" + e + ".md").default;
+  'ghdl',
+  'vunit',
+  'mambo',
+  'dynamorio',
+  'gcc',
+  'spinalhdl',
+  'golang',
+  'protoc',
+  'gtkwave',
+  'docker',
+].forEach(function (e) {
+  var d = require('@/assets/md/tools/' + e + '.md').default;
   tools[e] = d.data;
   tools[e].desc = d.content;
   tools[e].show = false;
@@ -102,37 +100,37 @@ var show = { left: {}, right: {} };
 
 var keys = Object.keys(tools);
 for (var i = 0; i < keys.length; i++) {
-  var c = i < Math.round(keys.length / 2) ? "left" : "right";
+  var c = i < Math.round(keys.length / 2) ? 'left' : 'right';
   cols[c][keys[i]] = tools[keys[i]];
   show[c][keys[i]] = false;
 }
 
-const d = require("@/assets/md/tools/tools.md").default;
+const d = require('@/assets/md/tools/tools.md').default;
 
 export default {
-  name: "tools",
+  name: 'tools',
   data() {
     return {
       cols: cols,
       show: show,
       intro: d.data.intro,
-      content: d.content
+      content: d.content,
     };
   },
   methods: {
     toggle(i, k) {
       this.show[i][k] = !this.show[i][k];
-      localStorage.setItem("tools-show", JSON.stringify(this.show));
-    }
+      localStorage.setItem('tools-show', JSON.stringify(this.show));
+    },
   },
-  mounted: function() {
+  mounted: function () {
     try {
-      var s = JSON.parse(localStorage.getItem("tools-show"));
+      var s = JSON.parse(localStorage.getItem('tools-show'));
       if (s != null) {
         this.show = s;
       }
     } catch (e) {
-      localStorage.removeItem("tools-show");
+      localStorage.removeItem('tools-show');
     }
 
     var t = this.$route.params.tool;
@@ -142,7 +140,7 @@ export default {
     if (this.cols.right[t] != undefined) {
       this.show.right[t] = true;
     }
-  }
+  },
 };
 </script>
 

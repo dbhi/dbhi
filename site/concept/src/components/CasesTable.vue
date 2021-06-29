@@ -19,7 +19,6 @@
       default-sort="status"
       @click="clicked"
     >
-
       <b-table-column
         v-slot="props"
         field="status"
@@ -50,11 +49,8 @@
         width="40"
         sortable
       >
-        <span
-          class="tag"
-          :class="props.row.src ? 'is-success' : 'is-warning'"
-        >
-          {{ props.row.src ? "y" : "n" }}
+        <span class="tag" :class="props.row.src ? 'is-success' : 'is-warning'">
+          {{ props.row.src ? 'y' : 'n' }}
         </span>
       </b-table-column>
 
@@ -78,11 +74,7 @@
         {{ props.row.hard }}
       </b-table-column>
 
-      <b-table-column
-        v-slot="props"
-        field="artifacts"
-        label="Artifacts"
-      >
+      <b-table-column v-slot="props" field="artifacts" label="Artifacts">
         <b-field grouped group-multiline>
           <div class="control" v-for="a in props.row.artifacts" :key="a">
             <b-taglist attached>
@@ -98,11 +90,7 @@
         </b-field>
       </b-table-column>
 
-      <b-table-column
-        v-slot="props"
-        field="dependencies"
-        label="Dependencies"
-      >
+      <b-table-column v-slot="props" field="dependencies" label="Dependencies">
         <b-taglist>
           <b-tag
             size="is-small"
@@ -112,7 +100,7 @@
             >{{ d }}</b-tag
           >
         </b-taglist>
-        </b-table-column>
+      </b-table-column>
 
       <template #bottom-left>
         <div class="field is-grouped">
@@ -121,7 +109,7 @@
               :native-value="showKey"
               @input="$emit('update:showKey', $event)"
               size="is-small"
-              style="vertical-align: middle;"
+              style="vertical-align: middle"
               >Key</b-switch
             >
           </div>
@@ -134,9 +122,9 @@
             <div class="control">
               <div class="select is-small">
                 <select v-model="perPage">
-                  <option v-for="v in [5, 10, 15, 30]" :key="v" :value="v">{{
-                    v
-                  }}</option>
+                  <option v-for="v in [5, 10, 15, 30]" :key="v" :value="v">
+                    {{ v }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -157,33 +145,32 @@
           </div>
         </section>
       </template>
-
     </b-table>
   </section>
 </template>
 
 <script>
 export default {
-  name: "casestable",
+  name: 'casestable',
   props: {
     data: Array,
     selected: Object,
     showKey: Boolean,
-    total: Number
+    total: Number,
   },
   data() {
     return {
       perPage: 30,
-      hasMobileCards: true
+      hasMobileCards: true,
     };
   },
   methods: {
     clicked(e) {
       if (e === this.selected) {
-        this.$emit("update:selected", {});
+        this.$emit('update:selected', {});
       }
-    }
-  }
+    },
+  },
 };
 
 //You can have detailed rows by adding a detail named scoped slot and the detailed prop.

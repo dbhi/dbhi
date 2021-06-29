@@ -1,5 +1,5 @@
 ---
 id: nxp
-status: "out-of-scope"
+status: 'out-of-scope'
 artifacts:
 ---

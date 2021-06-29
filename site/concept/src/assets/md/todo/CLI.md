@@ -6,6 +6,7 @@
 - Add subcommand `bug` to 'start a bug report'. E.g. https://github.com/kyoh86/richgo.
 - Add subcommand `clean` to remove build and test artifacts.
 - Add `--ieee=synopsys -frelaxed` to GHDL args only when required. I.e., provide option in the JSON to set GHDL args.
+
 ---
 
 - https://github.com/Digilent/digilent-vivado-scripts

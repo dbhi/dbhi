@@ -15,12 +15,12 @@
 
 <script>
 export default {
-  name: "foot",
+  name: 'foot',
   data() {
     return {
-      shields: require("@/assets/json/shields.json")
+      shields: require('@/assets/json/shields.json'),
     };
-  }
+  },
 };
 </script>
 

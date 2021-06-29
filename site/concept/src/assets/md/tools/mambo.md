@@ -1,6 +1,6 @@
 ---
-tool: "MAMBO"
-gh: "beehive-lab/mambo"
+tool: 'MAMBO'
+gh: 'beehive-lab/mambo'
 ---
 
 no content yet
