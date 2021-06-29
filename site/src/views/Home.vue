@@ -43,8 +43,8 @@
         <span>Source: github.com/dbhi/dbhi</span>
       </v-tooltip>
     </v-col>
-    <v-col class="shrink" align="center">
-      <v-tooltip bottom v-for="item in refs" :key="item.name">
+    <v-col class="shrink" align="center" v-for="row in refs" :key="row">
+      <v-tooltip bottom v-for="item in row" :key="item.name">
         <template v-slot:activator="{ on }">
           <v-btn
             :href="'https://github.com/' + item.ref"
@@ -71,13 +71,39 @@ export default {
   name: 'Home',
   data: () => ({
     refs: [
+      [
+      {
+        name: "run",
+        ref: "dbhi/run"
+      },{
+        name: "qus",
+        ref: "dbhi/qus"
+      },
+      {
+        name: "containers",
+        ref: "dbhi/containers"
+      },
+      {
+        name: "gRPC",
+        ref: "dbhi/gRPC"
+      },
+      {
+        name: "binhook",
+        ref: "dbhi/binhook"
+      },
+      {
+        name: "vboard",
+        ref: "dbhi/vboard"
+      }
+      ],
+      [
       {
         name: "GHDL",
-        ref: "ghdl/ghdl"
+        ref: "GHDL"
       },
       {
         name: "VUnit",
-        ref: "dbhi/vunit"
+        ref: "VUnit"
       },
       {
         name: "MAMBO",
@@ -86,19 +112,8 @@ export default {
       {
         name: "DynamoRIO",
         ref: "DynamoRIO/dynamorio"
-      },
-      {
-        name: "gRPC",
-        ref: "dbhi/gRPC"
-      },
-      {
-        name: "containers",
-        ref: "dbhi/containers"
-      },
-      {
-        name: "qus",
-        ref: "dbhi/qus"
       }
+      ]
     ]
   })
 };
