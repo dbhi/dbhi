@@ -1,7 +1,7 @@
 ---
-tool: "SpinalHDL"
-gh: "SpinalHDL"
-site: "https://spinalhdl.github.io/SpinalDoc-RTD/"
+tool: 'SpinalHDL'
+gh: 'SpinalHDL'
+site: 'https://spinalhdl.github.io/SpinalDoc-RTD/'
 ---
 
 no content yet

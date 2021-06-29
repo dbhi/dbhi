@@ -21,8 +21,7 @@
       "a | arm": "on an ARM device (either armv7, aarch32 or aarch4)",
       "x | amd64": "on an amd64 device (either amd64, x86_64 or i686)",
       "u | user": "built for ARM but executed on amd64 through QEMU user-mode",
-      "s | system":
-        "built for ARM but executed on amd64 through QEMU system-mode"
+      "s | system": "built for ARM but executed on amd64 through QEMU system-mode"
     }
   },
   "hard": {
@@ -30,8 +29,7 @@
     "items": {
       "a | arm": "compiled HDL on an ARM device",
       "x | amd64": "compiled HDL on an amd64 device",
-      "p | PL":
-        "actually synthesised and implemented in the Programmable Logic (PL) of a SoC with an ARM core"
+      "p | PL": "actually synthesised and implemented in the Programmable Logic (PL) of a SoC with an ARM core"
     }
   },
   "artifacts": {

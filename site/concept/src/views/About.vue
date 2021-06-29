@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ToDo from "@/components/ToDo.vue";
+import ToDo from '@/components/ToDo.vue';
 
 export default {
-  name: "about",
+  name: 'about',
   components: {
-    ToDo
-  }
+    ToDo,
+  },
 };
 </script>

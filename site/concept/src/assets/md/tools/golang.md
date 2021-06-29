@@ -1,7 +1,7 @@
 ---
-tool: "golang"
-wikipedia: "Go_(programming_language)"
-site: "https://golang.org/"
+tool: 'golang'
+wikipedia: 'Go_(programming_language)'
+site: 'https://golang.org/'
 ---
 
 no content yet

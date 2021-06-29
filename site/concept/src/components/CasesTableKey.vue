@@ -10,11 +10,11 @@
             class="field"
             v-for="(i, c) in d.status.items"
             :key="c"
-            :class="{ 'is-disabled': !value.status[c[0]] }"
+            :class="{'is-disabled': !value.status[c[0]]}"
           >
             <b-checkbox
               v-model="value.status[c[0]]"
-              :class="{ 'has-text-weight-bold': value.status[c[0]] }"
+              :class="{'has-text-weight-bold': value.status[c[0]]}"
               ><b-icon :icon="stIcon(c)" :type="stType(c)"></b-icon>
             </b-checkbox>
             <p class="is-size-7 is-italic has-text-weight-light">{{ i }}</p>
@@ -30,11 +30,11 @@
             class="field"
             v-for="(i, c) in d.src.items"
             :key="c"
-            :class="{ 'is-disabled': !value.src[c[0]] }"
+            :class="{'is-disabled': !value.src[c[0]]}"
           >
             <b-checkbox
               v-model="value.src[c[0]]"
-              :class="{ 'has-text-weight-bold': value.src[c[0]] }"
+              :class="{'has-text-weight-bold': value.src[c[0]]}"
               >{{ c }}</b-checkbox
             >
             <p class="is-size-7 is-italic has-text-weight-light">{{ i }}</p>
@@ -52,11 +52,11 @@
             class="field"
             v-for="(i, c) in d.soft.items"
             :key="c"
-            :class="{ 'is-disabled': !value.soft[c[0]] }"
+            :class="{'is-disabled': !value.soft[c[0]]}"
           >
             <b-checkbox
               v-model="value.soft[c[0]]"
-              :class="{ 'has-text-weight-bold': value.soft[c[0]] }"
+              :class="{'has-text-weight-bold': value.soft[c[0]]}"
               >{{ c }}</b-checkbox
             >
             <p class="is-size-7 is-italic has-text-weight-light">{{ i }}</p>
@@ -72,11 +72,11 @@
             class="field"
             v-for="(i, c) in d.hard.items"
             :key="c"
-            :class="{ 'is-disabled': !value.hard[c[0]] }"
+            :class="{'is-disabled': !value.hard[c[0]]}"
           >
             <b-checkbox
               v-model="value.hard[c[0]]"
-              :class="{ 'has-text-weight-bold': value.hard[c[0]] }"
+              :class="{'has-text-weight-bold': value.hard[c[0]]}"
               >{{ c }}</b-checkbox
             >
             <p class="is-size-7 is-italic has-text-weight-light">{{ i }}</p>
@@ -93,18 +93,18 @@
             <b-icon
               type="is-primary"
               icon="checkbox-intermediate"
-              style="vertical-align: bottom;"
+              style="vertical-align: bottom"
             ></b-icon>
             <span
               class="control-label has-text-weight-bold"
-              style="padding-left: 0.5rem;"
+              style="padding-left: 0.5rem"
               >{{ c }}</span
             >
           </div>
 
           <p
             class="is-size-7 is-italic has-text-weight-light"
-            style="padding-top: 0.2rem;"
+            style="padding-top: 0.2rem"
           >
             {{ i }}
           </p>
@@ -116,13 +116,13 @@
 
 <script>
 export default {
-  name: "casestablekey",
-  props: { value: Object },
+  name: 'casestablekey',
+  props: {value: Object},
   data() {
     return {
-      d: require("@/assets/json/tabkeys.json")
+      d: require('@/assets/json/tabkeys.json'),
     };
-  }
+  },
 };
 </script>
 

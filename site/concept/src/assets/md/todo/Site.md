@@ -62,11 +62,13 @@
 ## Dependencies SVG
 
 - Make it 'interactive'.
+
   - When hovering an item, reduce the opacity of all the elements which are not in the dependency chain.
   - If click on an item, 'fix' the visible chain.
   - Add 'details' icon to each box/element. Show modal/popup with relevant info: brief description, used tool, inputs, outputs.
 
 - [magjac/d3-graphviz](https://github.com/magjac/d3-graphviz)
+
   - [d3-graphviz Demo](https://bl.ocks.org/magjac/4acffdb3afbc4f71b448a210b5060bca)
 
 - Since gonum allows to export to [Cytoscape.js](http://js.cytoscape.org/) format, it might be worth trying to build a basic GUI app on top of it. I.e., trigger certain events (show/hide blocks/modals) when the user clicks on a node.

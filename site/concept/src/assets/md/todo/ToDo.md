@@ -8,8 +8,8 @@
 - Install additional dependencies on `mambo-vm`. Execute tests inside (with(out) docker). `sshfs -p 5040 alarm@localhost: tmp-mambo/`
 - Find a procedure to get the compilation order from VUnit VHDL. Custom `run.py` that exports a list/json?
 - Reduce the compilation overhead by either:
-    - Building the C wrapper as a shared library.
-    - Using a device node or pipe
+  - Building the C wrapper as a shared library.
+  - Using a device node or pipe
 - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842109/QEMU+SystemC+and+TLM+CoSimulation
   - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842060/QEMU#QEMU-RunningaLinuxKernelImageInQEMU
 

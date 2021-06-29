@@ -1,5 +1,5 @@
 ---
-intro: "The DBHI design flow is based on an automation CLI constructed from existing off-the-shelf tools. In this section, the tools are enumerated and a brief description is provided along with references to the corresponding web sites, repositories and/or Wikipedia entries. The ones on the left column are required for almost any use case, while the need for those on the right column depends on specific contexts."
+intro: 'The DBHI design flow is based on an automation CLI constructed from existing off-the-shelf tools. In this section, the tools are enumerated and a brief description is provided along with references to the corresponding web sites, repositories and/or Wikipedia entries. The ones on the left column are required for almost any use case, while the need for those on the right column depends on specific contexts.'
 ---
 
 ## Container images
@@ -8,7 +8,7 @@ Ready-to-use [docker](https://www.docker.com/)|[podman](https://podman.io) image
 
 If `docker` is available on your target platform, using the provided images is recommended, because the overhead is negligible, it helps reproducibility and it significantly reduces setup time. The following script can be used to test if a platform fulfills the requirements to run the docker daemon:
 
-``` bash
+```bash
 curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh | bash -
 ```
 
@@ -19,9 +19,9 @@ Should you want to install the tools on your host, the dockerfiles at [github.co
 - Ensure that all the libraries are built with `-fPIC` when building GHDL.
 - GHDL must be available in the `$PATH`.
 - VUnit must be installed in a default location (e.g. `pip install vunit_hdl`), or:
-    - It must be cloned recursively,
-    - `colorama` must be installed (e.g. `pip install colorama`,
-    - and `PYTHONPATH` must be set.
+  - It must be cloned recursively,
+  - `colorama` must be installed (e.g. `pip install colorama`,
+  - and `PYTHONPATH` must be set.
 - MAMBO must be recursively cloned. ATM, not all the required features are available at the `master` branch of the official repository ([beehive-lab/mambo](https://github.com/beehive-lab/mambo)) yet. Please, clone branch `dbhi` from ([dbhi/mambo](https://github.com/dbhi/mambo)). Set the path to MAMBO through `DBHI_MAMBO`.
 - To get DynamoRIO a release tarball can be downloaded or it can be built from sources. Set `DYNAMORIO_HOME` to the path of the distribution.
 

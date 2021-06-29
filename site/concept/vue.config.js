@@ -6,9 +6,9 @@ module.exports = {
       rules: [
         {
           test: /\.md$/,
-          use: [{ loader: "gray-matter-loader" }]
-        }
-      ]
-    }
-  }
+          use: [{loader: 'gray-matter-loader'}],
+        },
+      ],
+    },
+  },
 };

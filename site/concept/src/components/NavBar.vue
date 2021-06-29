@@ -9,17 +9,15 @@
         <router-link
           class="navbar-item"
           to="/"
-          style="padding-top: 0; padding-bottom: 0;"
+          style="padding-top: 0; padding-bottom: 0"
         >
           <b-icon
             icon="source-fork"
             size="is-medium"
             custom-size="mdi-24px"
-            style="padding-bottom: 2px;"
+            style="padding-bottom: 2px"
           ></b-icon>
-          <span style="font-size: 2rem; font-family: BigJohnPROBold;"
-            >DBHI</span
-          >
+          <span style="font-size: 2rem; font-family: BigJohnPROBold">DBHI</span>
         </router-link>
 
         <a
@@ -75,12 +73,12 @@
 
 <script>
 export default {
-  name: "navbar",
+  name: 'navbar',
   data() {
     return {
-      menu: require("@/assets/json/menu.json")
+      menu: require('@/assets/json/menu.json'),
     };
-  }
+  },
 };
 </script>
 
