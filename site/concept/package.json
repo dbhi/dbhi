@@ -33,7 +33,7 @@
     "gray-matter-loader": "^0.0.10",
     "prettier": "^2.4.0",
     "raw-loader": "^4.0.2",
-    "sass": "^1.39.2",
+    "sass": "^1.42.1",
     "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.5.21"
   },
