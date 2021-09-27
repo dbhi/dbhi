@@ -14,7 +14,7 @@
   "dependencies": {
     "@mdi/font": "^6.1.95",
     "buefy": "^0.9.10",
-    "marked": "^3.0.3",
+    "marked": "^3.0.4",
     "viz.js": "^2.1.2",
     "vue": "^2.6.6",
     "vue-resource": "^1.5.1",
@@ -31,9 +31,9 @@
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
     "gray-matter-loader": "^0.0.10",
-    "prettier": "^2.4.0",
+    "prettier": "^2.4.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.39.2",
+    "sass": "^1.42.1",
     "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.5.21"
   },
