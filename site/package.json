@@ -29,7 +29,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
+    "@vue/cli-service": "^4.5.14",
     "babel-eslint": "^10.1.0",
     "electron": "^15.1.2",
     "electron-devtools-installer": "^3.2.0",
