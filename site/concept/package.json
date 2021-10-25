@@ -12,9 +12,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@mdi/font": "^6.3.95",
+    "@mdi/font": "^6.4.95",
     "buefy": "^0.9.10",
-    "marked": "^3.0.7",
+    "marked": "^3.0.8",
     "viz.js": "^2.1.2",
     "vue": "^2.6.6",
     "vue-resource": "^1.5.1",
@@ -33,7 +33,7 @@
     "gray-matter-loader": "^0.0.10",
     "prettier": "^2.4.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.43.2",
+    "sass": "^1.43.3",
     "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.5.21"
   },
