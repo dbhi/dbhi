@@ -12,9 +12,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@mdi/font": "^6.4.95",
-    "buefy": "^0.9.11",
-    "marked": "^4.0.0",
+    "@mdi/font": "^6.5.95",
+    "buefy": "^0.9.13",
+    "marked": "^4.0.3",
     "viz.js": "^2.1.2",
     "vue": "^2.6.6",
     "vue-resource": "^1.5.1",
