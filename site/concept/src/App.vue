@@ -17,7 +17,7 @@ import 'buefy/dist/buefy.css';
 import Vue from 'vue';
 Vue.use(Buefy);
 
-const marked = require('marked');
+const { marked } = require('marked');
 Vue.mixin({
   // This is a workaround for GitHub Pages not serving routes without an index.html.
   // 404.html will be loaded, which will set `GoToPath` and the navigate to `/concept`,
