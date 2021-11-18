@@ -90,6 +90,16 @@ export default {
       ],
       [
         {
+          name: 'MAMBO',
+          ref: 'beehive-lab/mambo',
+        },
+        {
+          name: 'DynamoRIO',
+          ref: 'DynamoRIO/dynamorio',
+        },
+      ],
+      [
+        {
           name: 'GHDL',
           ref: 'GHDL',
         },
@@ -98,12 +108,24 @@ export default {
           ref: 'VUnit',
         },
         {
-          name: 'MAMBO',
-          ref: 'beehive-lab/mambo',
+          name: 'GTKWave',
+          ref: 'gtkwave/gtkwave',
         },
         {
-          name: 'DynamoRIO',
-          ref: 'DynamoRIO/dynamorio',
+          name: 'OSVB',
+          ref: 'umarcor/osvb',
+        },
+        {
+          name: 'EDA²',
+          ref: 'edaa-org',
+        },
+        {
+          name: 'HDL',
+          ref: 'hdl',
+        },
+        {
+          name: 'SIEAV',
+          ref: 'umarcor/SIEAV',
         },
       ],
     ],
