@@ -26,7 +26,17 @@
           FPGA 2020
         </v-btn>
       </template>
-      <span>Home</span>
+      <span>FPGA 2020</span>
+    </v-tooltip>
+
+    <v-tooltip bottom>
+      <template v-slot:activator="{on}">
+        <v-btn class="ml-1" tile text v-on="on" href="concept">
+          <v-icon left>mdi-movie-open</v-icon>
+          Concept
+        </v-btn>
+      </template>
+      <span>Concept</span>
     </v-tooltip>
 
     <v-spacer></v-spacer>
