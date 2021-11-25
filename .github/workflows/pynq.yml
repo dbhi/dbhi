@@ -14,13 +14,25 @@ jobs:
 
   pynq:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: 'ubuntu:bionic', gnat: '8', llvm: '6.0' }
+          - { os: 'ubuntu:focal', gnat: '9', llvm: '9' }
     steps:
     - uses: actions/checkout@v2
-    - name: Run setup_pynq.sh in arm32v7/ubuntu:bionic
+    - name: Run setup_pynq.sh in arm32v7/${{ matrix.os }}
       run: |
         docker run --rm --privileged aptman/qus -- -r
         docker run --rm --privileged aptman/qus -s -- -p arm
         mkdir ../build-tmp
         cd ../build-tmp
         cp ../dbhi/scripts/setup_pynq.sh ./
-        docker run --rm -v $(pwd):/src -w /src arm32v7/ubuntu:bionic ./setup_pynq.sh
+        docker run --rm \
+          -v $(pwd):/src \
+          -w /src \
+          -e GNAT_VER='${{ matrix.gnat }}' \
+          -e LLVM_VER='${{ matrix.llvm }}' \
+          arm32v7/${{ matrix.os }} \
+          ./setup_pynq.sh

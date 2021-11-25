@@ -2,19 +2,23 @@
 
 # Tested on
 # Pynq SD Images: v2.3, v2.4 and v2.5
+# Should work with v2.6 and v2.7 as well
 # Boards: PYNQ-Z1, ARTY-Z7
 
 $(command -v sudo) apt update -qq
 
+GNAT_VER="${GNAT_VER:-8}"
+LLVM_VER="${LLVM_VER:-6.0}"
+
 # Install GHDL dependencies
 $(command -v sudo) apt-get -y install --no-install-recommends \
   ca-certificates \
-  clang-6.0 \
+  clang-"$LLVM_VER" \
   gcc \
   git \
-  gnat-8 \
+  gnat-"$GNAT_VER" \
   libstdc++-8-dev \
-  llvm-6.0-dev \
+  llvm-"$LLVM_VER"-dev \
   make \
   zlib1g-dev
 
@@ -26,7 +30,7 @@ git clone https://github.com/ghdl/ghdl
 cd ghdl
 mkdir build-llvm
 cd build-llvm
-CXX=clang++-6.0 ../configure --with-llvm-config=llvm-config-6.0 --default-pic --disable-werror
+CXX=clang++-"$LLVM_VER" ../configure --with-llvm-config=llvm-config-"$LLVM_VER" --default-pic --disable-werror
 make
 if [ -d "/opt/ghdl" ]; then
   sudo rm -rf /opt/ghdl
