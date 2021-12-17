@@ -8,7 +8,7 @@
   <a title="'site' workflow status" href="https://github.com/dbhi/dbhi/actions?query=workflow%3Asite"><img alt="'site' workflow status" src="https://img.shields.io/github/workflow/status/dbhi/dbhi/site?longCache=true&style=flat-square&label=site&logo=Github%20Actions&logoColor=fff"></a>
 </p>
 
-Dynamic Binary Hardware Injection (DBHI) is a work flow towards decoupled functional hardware-software co-design on SoCs with FPGA, through injection of compiled HDL designs. The design flow is constructed from existing off-the-shelf tools, and it is tested on multiple architectures (ARMv7, ARMv8 and x86-64).
+Dynamic Binary Hardware Injection (DBHI) is a workflow towards decoupled functional hardware-software co-design on SoCs with FPGA, through injection of compiled HDL designs. The design flow is constructed from existing off-the-shelf tools, and it is tested on multiple architectures (ARMv7, ARMv8 and x86-64).
 
 ## Project structure
 
@@ -18,7 +18,7 @@ Resources, tools and examples are organized in multiple repositories:
   - [VUnit/vunit](https://github.com/VUnit/vunit): a unit testing framework for VHDL/SystemVerilog.
   - [VUnit/cosim](https://github.com/VUnit/cosim): extends VUnit with co-simulation features.
   - [beehive-lab/mambo](https://github.com/beehive-lab/mambo): a low-overhead dynamic binary instrumentation and modification tool for ARM.
-  - [dbhi/gRPC](https://github.com/dbhi/gRPC): go sources of the DBHI gRPC server, and common sources to embed go gRPC clients in C applications.
+  - [dbhi/gRPC](https://github.com/dbhi/gRPC): Go sources of the DBHI gRPC server, and common sources to embed Go gRPC clients in C applications.
 - Other helper repositories:
   - [dbhi/containers](https://github.com/dbhi/containers): sources and CI configuration to containerize open and free development tools that allow to evaluate DBHI. Images are periodically pushed to [docker.io/aptman/dbhi](https://hub.docker.com/r/aptman/dbhi/).
   - [dbhi/qus](https://github.com/dbhi/qus): qemu-user-static (qus) and docker, non-invasive minimal working and non-working setups. Used by `dbhi/containers`.
@@ -33,7 +33,7 @@ The list of required tools to run the examples is the following:
     - [MAMBO](https://github.com/beehive-lab/mambo) (only avilable for ARM platforms)
     - [DynamoRIO](https://github.com/dynamorio/dynamorio)
 - (Optional) [GtkWave](http://gtkwave.sourceforge.net/)
-- (Optional, to use gRPC) [go(lang)](https://golang.org/)
+- (Optional, to use gRPC) [Go(lang)](https://golang.org/)
 
 ---
 
@@ -49,7 +49,7 @@ curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-conf
 
 ---
 
-Should you want to install the tools natively on your host, the dockerfiles at [dbhi/containers](https://github.com/dbhi/containers) can be used as a reference. I.e., the same steps can be reproduced in a shell script. Nonetheless, please read the following notes carefully:
+Should you want to install the tools natively on your host, the dockerfiles at [dbhi/containers](https://github.com/dbhi/containers) can be used as a reference (_i.e._, the same steps can be reproduced in a shell script). Nonetheless, please read the following notes carefully:
 
 - Ensure that all the libraries are built with `-fPIC` when building GHDL.
 - VUnit can be installed in a default location (e.g. `pip install vunit_hdl`), or:
