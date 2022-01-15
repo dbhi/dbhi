@@ -14,7 +14,7 @@
   "dependencies": {
     "@mdi/font": "^6.5.95",
     "buefy": "^0.9.14",
-    "marked": "^4.0.8",
+    "marked": "^4.0.10",
     "viz.js": "^2.1.2",
     "vue": "^2.6.6",
     "vue-resource": "^1.5.1",
