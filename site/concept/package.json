@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@mdi/font": "^6.5.95",
-    "buefy": "^0.9.14",
+    "buefy": "^0.9.17",
     "marked": "^4.0.10",
     "viz.js": "^2.1.2",
     "vue": "^2.6.6",
@@ -33,7 +33,7 @@
     "gray-matter-loader": "^0.0.10",
     "prettier": "^2.5.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.49.4",
+    "sass": "^1.49.9",
     "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.5.21"
   },
