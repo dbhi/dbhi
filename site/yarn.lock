@@ -3430,10 +3430,10 @@ core-js-compat@^3.21.0, core-js-compat@^3.22.1, core-js-compat@^3.8.3:
     browserslist "^4.20.3"
     semver "7.0.0"
 
-core-js@^3.22.6, core-js@^3.8.3:
-  version "3.22.6"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.6.tgz#294dd824b4cae2c24725a36baa4a791ed00bb0de"
-  integrity sha512-2IGcGH00z9I4twgNWU4uGCNEsBFG1s2JudVQrgSCoVhOfwoTwQjxC8aMo9exrpTMOxvobggEpaHnGMmQY4cfBQ==
+core-js@^3.27.0, core-js@^3.8.3:
+  version "3.27.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.27.0.tgz#a343bc614f29d9dcffa7616e65e10f9001cdd332"
+  integrity sha512-wY6cKosevs430KRkHUIsvepDXHGjlXOZO3hYXNyqpD6JvB0X28aXyv0t1Y1vZMwE7SoKmtfa6IASHCPN52FwBQ==
 
 core-util-is@1.0.2:
   version "1.0.2"
