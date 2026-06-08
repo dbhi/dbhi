@@ -9387,10 +9387,10 @@ vuetify-loader@^1.7.3:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@^2.6.6:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.6.tgz#7af178fece5ccd561639eba425fe6c0a5803b37e"
-  integrity sha512-H4KtxDFmDN8QiTRiGfBySyjMhVaHAJTKB0llGGKZT5jKxtnx9gvEtMWXKtVuRP0NJJP0H6xBPJHNOH7nT18qiQ==
+vuetify@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.7.2.tgz#b2b687e519257d789a63b87c418f98099f38990f"
+  integrity sha512-qr04ww7uzAPQbpk751x4fSdjsJ+zREzjQ/rBlcQGuWS6MIMFMXcXcwvp4+/tnGsULZxPMWfQ0kmZmg5Yc/XzgQ==
 
 vuex-router-sync@^5.0.0:
   version "5.0.0"
