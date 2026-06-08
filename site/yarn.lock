@@ -16,6 +16,15 @@
     event-pubsub "4.3.0"
     js-message "1.0.7"
 
+"@achrinza/node-ipc@^9.2.5":
+  version "9.2.10"
+  resolved "https://registry.yarnpkg.com/@achrinza/node-ipc/-/node-ipc-9.2.10.tgz#aa17def30e134e8c0a8738ffc13e50c08a753ff0"
+  integrity sha512-rCkw57K82y1XA9KwBmuMrupFQr9VOS4Rn77vW2UD2j0+HjlP/npSON9COkUIfocd95B4wv5EpfWMr6lGD4lN3A==
+  dependencies:
+    "@node-ipc/js-queue" "2.0.3"
+    event-pubsub "4.3.0"
+    js-message "1.0.7"
+
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"
@@ -1600,12 +1609,12 @@
     thread-loader "^3.0.0"
     webpack "^5.54.0"
 
-"@vue/cli-plugin-eslint@^5.0.3":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-5.0.4.tgz#33ee3e971d8ee1664d55ffd15b2af548af66fef8"
-  integrity sha512-NLBEKFTFJhYHMzQ3z+sb6xlkcNaN/RcbZ3hiCY72aJe4YOO8jEAp0XkPzlHd4xYkMW7jrmOwwLOPw+3BJ4b77Q==
+"@vue/cli-plugin-eslint@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-5.0.9.tgz#011ae81be6f016a94002aa3b25d453c52f77c83e"
+  integrity sha512-OfAa85qhP0dKSprI8+9qjbXW8BzOlOvEtXwdrTrAKlD6aN8oa/u6k4vbfJGdYbpsbpkj8FXYdCRkTgNG8KZbxg==
   dependencies:
-    "@vue/cli-shared-utils" "^5.0.4"
+    "@vue/cli-shared-utils" "^5.0.9"
     eslint-webpack-plugin "^3.1.0"
     globby "^11.0.2"
     webpack "^5.54.0"
@@ -1702,12 +1711,12 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/cli-shared-utils@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-5.0.4.tgz#e3f42575cb6b70e021272ef2c8bb52ca544ecf27"
-  integrity sha512-nfAsj8Nopu5sVHMBIaut/YL7NaJFVmTBSTJD7LM17jc5uytrM9JwiRtzCiv3JWRBG78Xdb/s2Xb/1YR4fkdmkQ==
+"@vue/cli-shared-utils@^5.0.4", "@vue/cli-shared-utils@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-5.0.9.tgz#dbb62953e953757773e89e69f369559fced135cf"
+  integrity sha512-lf4KykiG8j9KwvNVi7fKtASmHuLsxCcCsflVU2b2CHMRuR4weOIV3zuuCrjWKjk0APn/MHJhgCjJGzHMbTtd5w==
   dependencies:
-    "@achrinza/node-ipc" "9.2.2"
+    "@achrinza/node-ipc" "^9.2.5"
     chalk "^4.1.2"
     execa "^1.0.0"
     joi "^17.4.0"
